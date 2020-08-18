@@ -1,5 +1,108 @@
-.awards {
-  /* width: 800px; */
-  margin: auto;
-  transition: 0.5s;
+hr {
+  border-top: 1px solid #504f4f;
+  border-bottom: 0px solid #504f4f;
+  border-left: 0px solid #504f4f;
+  border-right: 0px solid #504f4f;
 }
+
+.sub-content-container {
+  min-width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.left-holder {
+  max-width: 100%;
+  min-width: 320px;
+  /* border: 2px solid red; */
+}
+
+.right-holder {
+  width: 320px;
+}
+
+.sub-content {
+  /* border: 1px solid green; */
+  width: 100%;
+  max-width: 1200px;
+  min-width: 800px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.awards {
+  width: 100%;
+  margin: 20px 0;
+  /* max-width: 800px; */
+  /* min-width: 600px; */
+  /* border: 1px solid red; */
+}
+
+.awards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+}
+
+.awards-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  margin: 10px;
+}
+
+.awards-title h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: #504f4f;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.awards-content {
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+.awards-content ul {
+  display: block;
+  /* list-style-type: disc; */
+  margin: 5px 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.awards-content ul h3 {
+  color: #00228F;
+}
+
+
+/* --------------------------responsive-------------------------- */
+@media (max-width: 1200px) {
+  .sub-content {
+    min-width: 0;
+    /* max-width: none; */
+    padding: 10px;
+  }
+
+  .awards-content {
+    width: 100%;
+  }
+
+  .awards-content ul {
+    padding-left: 20px;
+  }
+
+  .navbar-spaceholder {
+    display: none;
+  }
+}
+
+
+

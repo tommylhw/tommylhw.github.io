@@ -411,6 +411,10 @@ hr {
     font-size: 20px;
   }
 
+  .upper-footer {
+    padding: 10px 10px;
+  }
+
   .lower-footer {
     flex-direction: column;
   }

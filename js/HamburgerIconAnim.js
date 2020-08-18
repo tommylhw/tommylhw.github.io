@@ -3,3 +3,6 @@ $(document).ready(function(){
     $(this).toggleClass('open');
   });
 });
+
+var width = $("nav").width();
+console.log(width);
