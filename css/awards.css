@@ -5,35 +5,9 @@ hr {
   border-right: 0px solid #504f4f;
 }
 
-.sub-content-container {
-  min-width: 100%;
-  /* border: 1px solid red; */
-  display: flex;
-}
-
-.left-holder {
-  max-width: 100%;
-  min-width: 320px;
-  /* border: 2px solid red; */
-}
-
-.right-holder {
-  width: 320px;
-}
-
-.sub-content {
-  /* border: 1px solid green; */
-  width: 100%;
-  max-width: 1200px;
-  min-width: 800px;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-}
-
 .awards {
   width: 100%;
-  margin: 20px 0;
+  margin: 10px 0;
   /* max-width: 800px; */
   /* min-width: 600px; */
   /* border: 1px solid red; */
@@ -44,6 +18,7 @@ hr {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin: 20px 0;
   border: 1px solid #cfcfcf;
   border-radius: 10px;
 }
@@ -82,15 +57,50 @@ hr {
   color: #00228F;
 }
 
+/* --------------------------carousel-------------------------- */
+.awards-carousel-container {
+  /* border: 1px solid red; */
+  width: 80%;
+  margin: 20px 0;
+}
+
+.awards-carousel-content-container {
+  /* border: 1px solid blue; */
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 15px;
+  transition: 0.5s;
+}
+
+.awards-carousel-content-container:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+.awards-carousel-content-container img {
+  width: 100%;
+}
+
+.awards-name {
+  height: 100%;
+  padding: 20px 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.awards-carousel-content-container h3 {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #00228F;
+  /* text-decoration: underline; */
+}
 
 /* --------------------------responsive-------------------------- */
 @media (max-width: 1200px) {
-  .sub-content {
-    min-width: 0;
-    /* max-width: none; */
-    padding: 10px;
-  }
-
   .awards-content {
     width: 100%;
   }
@@ -98,11 +108,15 @@ hr {
   .awards-content ul {
     padding-left: 20px;
   }
-
-  .navbar-spaceholder {
-    display: none;
-  }
 }
 
+@media (max-width: 725px) {
+  .awards-carousel-container {
+    width: 100%;
+  }
 
+  .academic-awards-hr {
+    width: 110%;
+  }
+}
 

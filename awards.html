@@ -6,11 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Library/fontawesome/css/all.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <!-- owl carousel -->
+	<link rel="stylesheet" href="../Library/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../Library/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../Library/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 	<!--custom file-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sub-style.css">
   <link rel="stylesheet" href="css/awards.css">
+  <link rel="stylesheet" href="css/owl-carousel-setup.css">
 </head>
 <body class="main-body">
 
@@ -62,7 +68,7 @@
         </div>
       </div>
       
-      <button type="button" class="contact-btn">Contact</button>
+      <a href="#" class="contact-btn">Contact</a>
     </div>
   </header>
 
@@ -169,13 +175,128 @@
               </li>
             </ul>
           </div>
+          
+          <div class="awards-carousel-container">
+            <div class="wrapper">
+              <div class="owl-carousel owl-theme">
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/HKICTA.jpg" alt="HKICTA">
+                      <div class="awards-name">
+                        <h3>Hong Kong ICT Awards 2019</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#"> 
+                      <img src="img/awards/21st_1.JPG" alt="21st_1">
+                      <div class="awards-name">
+                        <h3>The 21st Hong Kong Youth Science and Technology Invention Competition</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/Samsung.JPG" alt="Samsung">
+                      <div class="awards-name">
+                        <h3>Samsung Solve for Tomorrow 2018</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/SmartCity.JPG" alt="SmartCity">
+                      <div class="awards-name">
+                        <h3>Smart City Project Programme 2018/19</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/LST.jpg" alt="LST">
+                      <div class="awards-name">
+                        <h3>The 1st Caring for the Weak Community - Hong Kong Innovative Technology Design Competition</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/CASTIC_1.JPG" alt="CASTIC_1">
+                      <div class="awards-name">
+                        <h3>The 34th China Adolescents Youth Science and Technology Innovation Contest</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/APICTA.jpg" alt="APICTA">
+                      <div class="awards-name">
+                        <h3>2019 Asia Pacific ICT Awards</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/TheGreaterBay2019.png" alt="TheGreaterBay2019">
+                      <div class="awards-name">
+                        <h3>2019 Qianhai Guangdong-Hong Kong-Macao Youth Innovation and Entrepreneurship Competition</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/STEMExcellence.jpg" alt="STEMExcellence">
+                      <div class="awards-name">
+                        <h3>The Greater Bay Area STEM Excellence Award 2020 (Hong Kong)</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="awards-carousel-content-container">
+                    <a href="#">
+                      <img src="img/awards/Engineer.png" alt="Engineer">
+                      <div class="awards-name">
+                        <h3>The Second Future Engineer Grand Challenge</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="control">
+                <div class="nav-control">
+                  <span class="prev nav-btn"><i class="fas fa-angle-left"></i></span>
+                  <span class="next nav-btn"><i class="fas fa-angle-right"></i></span>
+                </div>
+                <div class="auto-play-control">
+                  <!-- <span class="auto-btn" onclick="AutoPlayController()"><i class="fas fa-pause-circle" id="play-pause-btn"></i></span> -->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="awards">
         <div class="awards-container">
           <div class="awards-title">
             <h1>Academic</h1>
-            <hr width="150%">
+            <hr width="150%" class="academic-awards-hr">
           </div>
           <div class="awards-content">
             <ul>
@@ -194,27 +315,6 @@
     <div class="navbar-spaceholder right-holder"></div>
 
   </secction>
-  
-  <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
-	<!-- <footer class="sub-footer">
-		<div class="upper-footer">
-			<p class="footer-region">Hong Kong</p>
-		</div>
-	
-		<hr class="footer-line">
-
-		<div class="lower-footer">
-			<ul class="footer-links-group">
-				<li class="footer-link"><a href="#">About Me</a></li>
-				<li class="footer-link"><a href="#">Awards</a></li>
-				<li class="footer-link"><a href="#">Media</a></li>
-				<li class="footer-link"><a href="#">Contact</a></li>
-			</ul>
-
-			<p class="footer-copyright">&copy; 2020 Wong Lok Him Tommy</p>
-		</div>
-		
-  </footer> -->
 
   <footer class="footer-position sub-footer">
 		<div class="upper-footer">
@@ -233,12 +333,14 @@
 			</ul>
 			<p class="footer-copyright">&copy; 2020 Wong Lok Him Tommy</p>
     </div>
-	</footer>
+  </footer>
+  
 
 	<!-- script -->
   <script src="js/HamburgerIconAnim.js"></script>
   <script src="js/SlideController.js"></script>
   <script src="js/ContentHolder.js"></script>
+  <script src="js/OwlCarouselSetUp.js"></script>
 		
 </body>
 </html>
