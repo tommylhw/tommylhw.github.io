@@ -1,0 +1,52 @@
+.slick-carousel {
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+.item {
+  width: 100%;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* prev-next-btn */
+.slick-prev:before, .slick-next:before { /* prev-next-btn*/
+  color: #00228F;
+  font-size: 30px;
+}
+
+.slick-prev { 
+    left: -35px; /* prev-btn position*/
+    z-index: 1000;
+}
+
+.slick-next {
+    right: -35px; /* next-btn position*/
+}
+
+/* dots */
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+    opacity: 1;
+}
+.slick-dots li button:before {
+    font-size: 8px;
+    line-height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: black;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #00228F;
+}
+
+/* --------------------------responsive-------------------------- */
+@media (max-width: 600px) {
+  .slick-carousel {
+    width: 100%;
+  }
+}

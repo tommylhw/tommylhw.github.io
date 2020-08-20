@@ -58,12 +58,6 @@ hr {
 }
 
 /* --------------------------carousel-------------------------- */
-.awards-carousel-container {
-  /* border: 1px solid red; */
-  width: 80%;
-  margin: 20px 0;
-}
-
 .awards-carousel-content-container {
   /* border: 1px solid blue; */
   width: 90%;
@@ -74,6 +68,10 @@ hr {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 15px;
   transition: 0.5s;
+}
+
+.awards-carousel-content-container a {
+  text-decoration: none;
 }
 
 .awards-carousel-content-container:hover {
@@ -94,10 +92,11 @@ hr {
 
 .awards-carousel-content-container h3 {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
   color: #00228F;
   /* text-decoration: underline; */
 }
+
 
 /* --------------------------responsive-------------------------- */
 @media (max-width: 1200px) {
@@ -111,7 +110,7 @@ hr {
 }
 
 @media (max-width: 725px) {
-  .awards-carousel-container {
+  .slick-carousel {
     width: 100%;
   }
 
