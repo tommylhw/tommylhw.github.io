@@ -7,121 +7,78 @@
 	<link rel="stylesheet" href="Library/fontawesome/css/all.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-	<!-- Hotjar Tracking Code for tommylhw.github.io -->
+	<!-- AOS -->
+	<link rel="stylesheet" href="Library/aos/aos.css">
+	<script src="Library/aos/aos.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176061087-1"></script>
 	<script>
-		(function(h,o,t,j,a,r){
-			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-			h._hjSettings={hjid:1956116,hjsv:6};
-			a=o.getElementsByTagName('head')[0];
-			r=o.createElement('script');r.async=1;
-			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-			a.appendChild(r);
-		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-176061087-1');
 	</script>
 	<!--custom file-->
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body class="index-body">
+<body>
+	<header>
+		<h1><a href="index.html">Tommy</a></h1>
 
-	<header class="index-header">
-		<div class="index-btn-group">
-			<a href="#"">About Me</a>
-			<a href="#"">Get In Touch</a>
-		</div>
-
-		<div class="index-header-right">
-			<input type="checkbox" id="nav-check">
-			<label for="nav-check" class="social-media-menu-container">
-				<svg width="25px" class="gb_cf social-media-menu" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
-			</label>
-			<div class="social-media-container">
-				<h3 class="social-media-heading">Social Media</h3>
-				<!-- <hr width="100%"> -->
-	
-				<div class="social-media-group">
-					<a href="https://www.facebook.com/lokhim.wong.777/" target="_blank" class="social-media-link">
-						<div class="social-media-box">
-							<i class="fab fa-facebook-square social-media-icon" id="facebook-icon"></i>
-							<p>facebook</p>
-						</div>
-					</a>
-					<a href="https://www.instagram.com/tommy_wonglokhim/" target="_blank" class="social-media-link">
-						<div class="social-media-box">
-							<i class="fab fa-instagram social-media-icon" id="instragram-icon"></i>
-							<p>Instragram</p>
-						</div>
-					</a>
-					<a href="https://www.linkedin.com/in/lok-him-wong-596617185/" target="_blank" class="social-media-link">
-						<div class="social-media-box">
-							<i class="fab fa-linkedin-in social-media-icon" id="linkedin-icon"></i>
-							<p>LinkedIn</p>
-						</div>
-					</a>
-					<a href="mailto:lokhim128@gmail.com" target="_blank" class="social-media-link">
-						<div class="social-media-box">
-							<i class="fas fa-envelope social-media-icon" id="mail-icon"></i>
-							<p>Mail</p>
-						</div>
-					</a>
-				</div>
-			</div>
-			<a href="#" class="contact-btn">Contact</a>
-		</div>
+		<input type="checkbox" id="sub-menu-toggle">
+		<label for="sub-menu-toggle">
+      <!-- <i class="fas fa-bars sub-menu-btn"></i> -->
+      <div class="nav-icon3-container">
+        <div id="nav-icon3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+		</label>
+		
+		<ul>
+			<li><a href="#">About Me</a></li>
+			<li><a href="#">Achievement</a></li>
+			<li><a href="#">Media</a></li>
+			<li><a href="#">C.A.R.D.</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
 	</header>
-	<div class="header-spaceholder"></div>
 
-	<section class="main-section">
-		<!-- <h1 class="heading">
-			<span>T</span>
-			<span>o</span>
-			<span>m</span>
-			<span>m</span>
-			<span>y</span>
-		</h1> -->
-
-		<div class="profile-into">
+	<section class="cover">
+		<div class="cover-left" data-aos="fade-right">
+			<h1>Hi, <br> I'm Tommy L.H.Wong.</h1>
+			<h3>A Technology Lover</h3>
+			<div class="cover-btn-group">
+				<a href="#" class="cover-btn">About Me</a>
+				<a href="#" class="cover-btn">Contact</a>
+			</div>
+			<div class="social-media-group">
+				<a href="#"><i class="fab fa-facebook-f social-media"></i></a>
+				<a href="#"><i class="fab fa-instagram social-media"></i></a>
+				<a href="#"><i class="fab fa-linkedin-in social-media"></i></a>
+			</div>
+		</div>
+		<div class="cover-right" data-aos="fade-left">
 			<div class="img-cropper">
 				<img src="img/Profile.jpeg" alt="Profile">
 			</div>
-
-			<div class="main-title">
-				<h1>Tommy <br> L.H. Wong</h1>
-			</div>
-		</div>
-
-		<div class="typing-writer-container">
-			<span class="txt-rotate typing-writer" data-period="3000"
-			data-rotate='[ "Hi, I am Tommy Wong.", "I am passionate in technology.", "I Love Developing!"]'></span>
-			<span id="cursor"> | </span>
-		</div>
-
-		<div class="responsive-btn-group">
-			<a href="#">About Me</a>
-			<a href="#">Get In Touch</a>
 		</div>
 	</section>
 
-	<footer class="footer-position index-footer">
-		<div class="upper-footer">
-			<p class="footer-region">Hong Kong</p>
-		</div>
-	
-		<hr class="footer-line">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-		<div class="lower-footer">
-			<ul class="footer-links-group">
-				<li class="footer-link"><a href="#">About Me</a></li>
-				<li class="footer-link"><a href="awards.html">Awards</a></li>
-				<li class="footer-link"><a href="#">Media</a></li>
-				<li class="footer-link"><a href="#">Contact</a></li>
-			</ul>
-			<p class="footer-copyright">&copy; 2020 Wong Lok Him Tommy</p>
-		</div>
-	</footer>
-
-	<!-- script -->
-	<script src="js/TypingWriter.js"></script>
+	<!-- JS script -->
 	<script src="js/SlideController.js"></script>
-		
+	<script src="js/HamburgerIconAnim.js"></script>
+
+	<script>
+		AOS.init({
+			duration: 1000,
+		});
+	</script>
 </body>
 </html>
