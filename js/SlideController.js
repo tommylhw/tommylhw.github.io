@@ -2,7 +2,7 @@ $(document).ready(function () {
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 10) {
 			$('header').css("box-shadow", "0 0 30px grey");
-			$('header').css("padding", "0 20px");
+			$('header').css("padding", "0px 20px");
 			$('header').css("background", "var(--purple-theme-color)");
 			$('header a').css("color", "#fff");
 			$('header ul li').hover(function() {
