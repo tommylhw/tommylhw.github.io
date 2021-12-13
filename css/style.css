@@ -1,6 +1,7 @@
 :root {
   --purple-theme-color: #5361FF;
   --grey-font-color: #848484;
+  --white-bg-color: #ECF0F3;
 }
 
 * {
@@ -12,6 +13,7 @@ body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   width: 100%;
   box-sizing: border-box;
+  background: var(--white-bg-color);
 }
 
 /* header */
@@ -20,13 +22,13 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 20px;
-  height: 65px;
+  padding: 10px 20px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.25s;
-  z-index: 10;
+  transition: all .3s ease;
+  z-index: 20;
 }
 
 header h1 {
@@ -36,7 +38,8 @@ header h1 {
 header a {
   text-decoration: none;
   color: var(--purple-theme-color);
-  transition: 0.25s;
+  /*transition: 0.25s;*/
+  /*transition: all .3s ease-in;*/
 }
 
 header ul {
@@ -70,6 +73,7 @@ header ul li:hover {
   right: 25px;
   z-index: 1000;
   display: none;
+  transition: all .3s ease;
 }
 
 #nav-icon3 {
@@ -145,10 +149,45 @@ header ul li:hover {
   left: 50%;
 }
 
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 6px;
+  /*background: #fff;*/
+  position: fixed;
+  top: 59px;
+  z-index: 1000;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 6px;
+  background: #fff;
+  width: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* cover */
 .cover {
   height: 100vh;
-  background: rgb(233, 233, 233);
+  /*background: rgb(233, 233, 233);*/
+  background: var(--white-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,8 +195,8 @@ header ul li:hover {
 }
 
 .cover-left {
-  /* border: 1px solid red; */
-  padding: 80px;
+  /*border: 1px solid red; */
+  padding: 50px;
 }
 
 .cover-left h1, .cover-left h3 {
@@ -165,7 +204,7 @@ header ul li:hover {
 }
 
 .cover-left h1 {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .cover-left h3 {
@@ -229,7 +268,7 @@ header ul li:hover {
 
 /* about */
 .about {
-  background: var(--purple-theme-color);
+  background: var(--white-bg-color);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -245,18 +284,26 @@ header ul li:hover {
 }
 
 .section-title h1 {
-  color: #fff;
+  color: var(--purple-theme-color);
   font-size: 50px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 100;
 }
 
+.about-title h1 {
+  color: #fff;
+}
+
 .section-title hr {
-  border-top: 1px solid #fff;
+  border-top: 1px solid var(--purple-theme-color);
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   border-left: 1px solid rgba(255, 255, 255, 0);
   border-right: 1px solid rgba(255, 255, 255, 0);
   height: 0px;
+}
+
+.about-title hr {
+  border-top: 1px solid #fff;
 }
 
 .about-container {
@@ -292,14 +339,56 @@ header ul li:hover {
 
 .future-content {
   padding: 50px 20%;
+  font-size: 35px;
+  color: #fff;
+  /* display: flex; */
+}
+
+.fa-quote-right {
+  float: right;
 }
 
 .future-content p {
   font-size: 35px;
-  color: #63C1EB;
+  color: #fff;
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  /* font-family: "Comic Sans MS", cursive, sans-serif; */
 }
+
+/* awards */
+.awards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 0;
+}
+
+/* cover-2 */
+/* .cover-2 {
+  height: 100vh;
+  border: 1px solid red;
+}
+.cover-2-img-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/cover-bg.JPG");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; 
+  border: 1px solid red;
+}
+
+.cover-2-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 40px;
+} */
 
 /* --------------------------responsive-------------------------- */
 @media (max-width: 1200px) {
@@ -328,6 +417,9 @@ header ul li:hover {
     width: 250px;
     margin-right: -250px;
     transition: 0.5s;
+    z-index: 10;
+    /*box-shadow: 30px 30px red;*/
+    /*border: 2px solid red;*/
   }
 
   header ul li a {
@@ -348,14 +440,17 @@ header ul li:hover {
   }
 
   .cover-left h1 {
-    font-size: 35px;
+    font-size: 40px;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 750px) { 
   .cover {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    /*border: 2px solid green;*/
   }
 
   .img-cropper {
@@ -379,7 +474,8 @@ header ul li:hover {
 
 @media (max-width: 490px) {
   .cover {
-    padding: 0 10px;
+    /*padding: 0 10px;*/
+    
   }
   
   .cover-left h1 {
