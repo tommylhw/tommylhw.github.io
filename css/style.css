@@ -311,19 +311,13 @@ header ul li button i {
 .about-details-title {
   width: 130px;
   font-weight: 300;
+  color: var(--light-pink);
 }
 
 .about-details-data {
   width: 80%;
   color: var(--light-text-grey);
 }
-
-
-
-
-
-
-
 
 .title-container i {
   font-size: 80px;
@@ -412,8 +406,10 @@ header ul li button i {
     width: 100%;
   }
 
-  .about-details table tr {
-    line-height: 50px;
+
+  .about-details table {
+    border-collapse: separate; 
+    border-spacing: 20px;
   }
 
   .about-details table tr td {
