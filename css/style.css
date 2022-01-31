@@ -1,6 +1,7 @@
 :root {
   --dark-blue: #1A237E;
   --dark-dark-blue: #10185f;
+  --light-blue: #3343A5;
   --sky-blue: #2AB3FF;
   --light-text-purple: #C5CAE9;
   --light-text-grey: #757575;
@@ -88,7 +89,7 @@ header ul li button {
 header ul li button:hover {
   background: var(--dark-dark-blue);
   cursor: pointer;
-  transition: 1s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 header ul li button i {
@@ -195,6 +196,7 @@ header ul li button i {
   background-image: url(../src/bg/bg-01.png);
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,6 +254,11 @@ header ul li button i {
   margin: 0 20px;
   font-size: 25px;
   color: var(--light-pink);
+  transition: .25s;
+}
+
+.about-social-meida a:hover {
+  color: var(--dark-pink);
 }
 
 .about-profile {
@@ -363,7 +370,7 @@ header ul li button i {
     transition: .3s;
     z-index: 10;
     overflow: auto;
-    /*box-shadow: 30px 30px red;*/
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* border: 2px solid red; */
   }
 
@@ -373,6 +380,7 @@ header ul li button i {
 
   header ul li button {
     padding: 20px 0;
+    font-size: 20px;
   }
 
   #sub-menu-toggle:checked ~ ul {
@@ -382,6 +390,11 @@ header ul li button i {
   .responsive-li {
     display: block;
     opacity: 0%;
+  }
+
+  .title-container p {
+    width: 85%;
+    text-align: center;
   }
 
   .about-content-container {
