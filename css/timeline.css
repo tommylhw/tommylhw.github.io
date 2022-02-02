@@ -25,7 +25,7 @@
 .timeline::after {
   content: '';
   position: absolute;
-  width: 6px;
+  width: 5px;
   background-color: var(--light-grey);
   top: 0;
   bottom: 0;

@@ -1,13 +1,18 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+
 :root {
   --dark-blue: #1A237E;
   --dark-dark-blue: #10185f;
   --light-blue: #3343A5;
   --sky-blue: #2AB3FF;
+
   --light-text-purple: #C5CAE9;
   --light-text-grey: #757575;
+  --bg-grey: #FAFAFA;
 
   --light-green: #AED581;
   --normal-green: #558B2F;
+  --bg-green: #73FFA0;
 
   --light-pink: #F06292;
   --dark-pink: #C2185B;
@@ -23,7 +28,37 @@ body {
   line-height: 1.5;
   width: 100%;
   box-sizing: border-box;
-  background: var(--white-bg-color);
+  background: var(--bg-grey);
+}
+
+/* --------------------------- link effects ---------------------------*/
+mark {
+  background-color: transparent;
+  color: inherit;
+  background-image: linear-gradient(var(--bg-green), var(--bg-green));
+  background-repeat: no-repeat;
+  background-size: 0 38%;
+  background-position: 0 100%;
+}
+
+mark.animate-in {
+  animation: 1.5s highlightIn ease-in-out forwards;
+}
+
+mark.animate-out {
+  animation: 1.5s highlightOut ease-in-out forwards;
+}
+
+@keyframes highlightIn {
+  to {
+    background-size: 100% 38%;
+  }
+}
+
+@keyframes highlightOut {
+  to {
+    background-size: 0 38%;
+  }
 }
 
 /* --------------------------- header ---------------------------*/
@@ -335,9 +370,14 @@ header ul li a i {
   color: var(--light-text-grey);
 }
 
+.about-details-data a {
+  color: var(--light-text-grey);
+}
+
 .title-container i {
   font-size: 80px;
 }
+
 
 /* -------------------------- awards container -------------------------- */
 .awards-content-container {
@@ -350,6 +390,21 @@ header ul li a i {
   flex-direction: column;
   align-items: center;
   /* background: rgb(136, 136, 136); */
+  position: relative;
+}
+
+.awards-external-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--normal-green);
+  cursor: pointer;
+  font-size: 18px;
+  transition: .1s;
+}
+
+.awards-external-link:hover {
+  font-size: 20px;
 }
 
 .awards-details {
