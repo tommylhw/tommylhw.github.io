@@ -102,7 +102,6 @@
 /* The actual content */
 .content {
   padding: 20px 30px;
-  /* border: 2px solid blue; */
   position: relative;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -137,6 +136,7 @@
 
   .content {
     padding: 30px 10px;
+    /* width: 70%; */
   }
 
 /* Make sure all circles are at the same spot */
@@ -146,10 +146,21 @@
 
 /* Make all right containers behave like the left ones */
   .right {
-    left: 0%;
+    left: 0;
   }
 
   .left {
     left: 0;
+  }
+
+  .left::before {
+    border-width: 0;
+    top: 0;
+    border-color: transparent transparent transparent #fff;
+  }
+
+  .right::before {
+    border-width: 0;
+    border-color: transparent transparent transparent #fff;
   }
 }

@@ -5,6 +5,7 @@
 	<title>Tommy Wong</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Library/fontawesome/css/all.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/c2c6da9d49.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!--custom file-->
@@ -87,7 +88,7 @@
 				<i class="fas fa-envelope"></i>
 				Contact
 			</a></li>
-			<hr>
+
 			<li class="responsive-li"><a href="#"></a>
 				<i class="fas fa-envelope"></i>
 				Contact
@@ -115,7 +116,7 @@
 				</div>
 
 				<div class="about-profile">
-					<div class="about-ecard">
+					<div class="about-ecard" data-aos="fade-right">
 						<div class="flip-group-container">
 							<div class="card-container">
 				
@@ -132,7 +133,7 @@
 				
 						</div>
 					</div>
-					<div class="about-details">
+					<div class="about-details" data-aos="fade-left">
 						<table>
 							<tr>
 								<td class="about-details-title">FULL NAME: </td>
@@ -165,5 +166,13 @@
 
 	<!-- <script src="js/tabbed-content.js"></script> -->
 	<script src="js/highlight.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			duration: 1000,
+			offset: 5
+		});
+	</script>
+
 </body>
 </html>
