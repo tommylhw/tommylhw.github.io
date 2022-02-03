@@ -125,14 +125,28 @@ header ul li a {
   text-decoration: none;
   background: var(--dark-blue);
   color: var(--light-text-purple);
-  border: 0px;
+  box-sizing: border-box;
+  /* border-bottom: 3px solid #fff; */
+  /* border-width: 50%; */
+  /* border: 0px; */
   /* border: 2px solid yellow; */
 }
 
 header ul li a:hover {
   background: var(--dark-dark-blue);
   cursor: pointer;
+  /* animation: headerlink 1s ease-in-out forwards; */
   transition: .2s ease-in-out;
+}
+
+@keyframes headerlink {
+  from {
+    border-width: 0;
+  }
+
+  to {
+    border-width: 100%;
+  }
 }
 
 header ul li a i {
@@ -483,11 +497,62 @@ header ul li a i {
 	margin-top: 25%;
 }
 
+/* -------------------------- media -------------------------- */
+.media-content-container {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+}
 
+.gallery-container {
+  /* -moz-column-count: 4; */
+  column-count: 3;
+  padding: 20px;
+  height: auto;
+}
+
+.press-container {
+  box-sizing: border-box;
+  height: auto;
+  display: block;
+  padding: 5px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  -webkit-column-break-inside: avoid;
+  transition: .2s;
+}
+
+.press-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.press-container a {
+  text-decoration: none;
+}
+
+.press-container h3 {
+  color: var(--light-pink);
+  text-align: left;
+}
+
+.press-container p {
+  color: var(--light-text-grey);
+  text-align: right;
+}
 
 
 
 /* -------------------------- responsive -------------------------- */
+@media (max-width: 1100px) {
+  .media-content-container {
+    width: 100%;
+  }
+
+  .gallery-container {
+    column-count: 3;
+  }
+}
+
 @media (max-width: 950px) {
   .nav-icon3-container {
     display: block;
@@ -594,6 +659,12 @@ header ul li a i {
 
 }
 
+@media (max-width: 850px) {
+  .gallery-container {
+    column-count: 2;
+  }
+}
+
 @media (max-width: 750px) { 
   .awards-content-container {
     width: 100%;
@@ -605,6 +676,8 @@ header ul li a i {
   }
 }
 
-@media (max-width: 490px) { 
-
+@media (max-width: 550px) { 
+  .gallery-container {
+    column-count: 1;
+  }
 }
