@@ -642,7 +642,7 @@ header ul li a i {
 /* -------------------------- contact -------------------------- */
 .contact-content-container {
     width: 700px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .modern-form {
