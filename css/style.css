@@ -1,17 +1,22 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
 
 :root {
     --dark-blue: #1A237E;
     --dark-dark-blue: #10185f;
     --light-blue: #3343A5;
     --sky-blue: #2AB3FF;
+
     --light-text-purple: #C5CAE9;
     --light-text-grey: #757575;
+    --dark-text-grey: #3a3a3a;
     --bg-grey: #FAFAFA;
+
     --light-green: #AED581;
     --normal-green: #558B2F;
     --bg-green: #73FFA0;
+
     --light-pink: #F06292;
     --dark-pink: #C2185B;
 }
@@ -22,7 +27,8 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     line-height: 1.5;
     width: 100%;
     box-sizing: border-box;
@@ -455,6 +461,7 @@ header ul li a i {
 .awards-details h3,
 .awards-details p {
     text-align: center;
+    color: var(--light-text-grey);
 }
 
 .left .awards-img-cropper {
@@ -534,7 +541,7 @@ header ul li a i {
     height: auto;
     display: block;
     padding: 5px;
-    margin: 10px;
+    margin: 40px 10px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     -webkit-column-break-inside: avoid;
     transition: .2s;
