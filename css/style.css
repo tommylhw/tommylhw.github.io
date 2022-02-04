@@ -569,13 +569,15 @@ header ul li a i {
 /* -------------------------- C.A.R.D. -------------------------- */
 
 
-/* .card-content-container {
+.card-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 50px 0;
 }
 
+/* 
 .card-trigger {
   padding: 20px 50px;
   background: #fff;
@@ -651,56 +653,106 @@ header ul li a i {
     background-color:  #fff;
     /* border: solid 1px #ccc; */
     padding: 20px 10px;
-  }
-  
-  .modern-form h3 {
-    text-align: center;
-  }
-  
-  .float-label-field {
-    border: none;
-    outline: none;
-    position: relative;
-    margin: 0 0 20px 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .float-label-field input {
-    border: none;
-    outline: none;
-    padding: 5px 5px 8px 0px;
-    width: 100%;
-    font-size: 18px;
-    border-bottom: solid 1px #efefef;
-  }
-  
-  .float-label-field label {
-    opacity: 0.5;
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    transition: all 0.2s ease;
-    font-size: 18px;
-  }
-  
-  .float-label-field.focus label {
-    color: var(--light-pink);
-  }
-  .float-label-field.focus input {
-    border-bottom: solid 1px var(--light-pink);
-  }
-  .float-label-field.float label {
-    opacity: 1;
-    top: -8px;
-    font-size: 60%;
-    transition: all 0.2s ease;
-    font-weight: bold;
-  }
+}
 
+.modern-form h3 {
+text-align: center;
+}
+
+.float-label-field {
+border: none;
+outline: none;
+position: relative;
+margin: 0 0 20px 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.float-label-field input {
+border: none;
+outline: none;
+padding: 5px 5px 8px 0px;
+width: 100%;
+font-size: 18px;
+border-bottom: solid 1px #efefef;
+}
+
+.float-label-field label {
+opacity: 0.5;
+position: absolute;
+top: 10px;
+left: 0px;
+transition: all 0.2s ease;
+font-size: 18px;
+}
+
+.float-label-field.focus label {
+color: var(--light-pink);
+}
+.float-label-field.focus input {
+border-bottom: solid 1px var(--light-pink);
+}
+.float-label-field.float label {
+opacity: 1;
+top: -8px;
+font-size: 60%;
+transition: all 0.2s ease;
+font-weight: bold;
+}
+
+/* -------------------------- footer -------------------------- */
+footer {
+    /* width: 100%; */
+    background: var(--dark-dark-blue);
+    border: 2px solid red;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav ul {
+    list-style: none;
+    /* border: 2px solid yellow; */
+    width: fit-content;
+    display: flex;
+}
+
+.footer-nav ul li {
+    /* border: 2px solid green; */
+    text-align: center;
+    padding: 25px;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--sky-blue);
+}
+
+footer hr {
+    display: block;
+    border-top: 1px solid var(--light-text-grey);
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 80%;
+}
+
+.copyright {
+    color: #fff;
+    margin: 20px;
+    font-weight: 100;
+    text-align: center;
+}
 
 /* -------------------------- responsive -------------------------- */
-
 @media (max-width: 1100px) {
     .media-content-container {
         width: 100%;
@@ -802,6 +854,10 @@ header ul li a i {
 @media (max-width: 850px) {
     .gallery-container {
         column-count: 2;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
     }
 }
 
