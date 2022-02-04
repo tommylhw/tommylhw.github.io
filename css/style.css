@@ -704,7 +704,7 @@ font-weight: bold;
 footer {
     /* width: 100%; */
     background: var(--dark-dark-blue);
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 50px;
     display: flex;
     flex-direction: column;
