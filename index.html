@@ -232,21 +232,43 @@
 		$.get("https://api.ipdata.co?api-key=6682a16d6d0b969e8ba766e3ba9e239c3de3225fe37f253369bf344d", function(response) {
 			console.log(response.ip);
 			console.log(response.country_name);
+			threatData = JSON.stringify(response.threat, null, "\t")
+			console.log(threatData);
 
-			Email.send({
-					Host : "smtp.elasticemail.com",
-					SecureToken : '8e0528ac-1759-4950-9fee-1ed4bacf7cdf',
-					Username : "lokhim128@gmail.com",
-					Password : "DAE29CB2D08D6D67E0BE0759CC2A19B1DA6A",
-					To : 'lokhim128@gmail.com',
-					From : "lokhim128@gmail.com",
-					Subject : "tommylhw.github.io",
-					Body : 
-					"Visitor IP: " + response.ip + "<br>" +  
-					"Location: " + response.continent_name + ", " + response.country_name + "<br>" + "About Page"
-				}).then(
-					message => console.log(message)
-			);
+			// Initialize the agent at application startup.
+		const fpPromise = import('https://fpcdn.io/v3/qQ3AYY4BZwTjWOrGXXnB')
+			.then(FingerprintJS => FingerprintJS.load({
+				apiKey: 'qQ3AYY4BZwTjWOrGXXnB'
+			}))
+	
+			// Get the visitor identifier when you need it.
+			fpPromise
+				.then(fp => fp.get())
+				.then(result => {
+					// This is the visitor identifier:
+					const visitorId = result.visitorId;
+					const requestId = result.requestId;
+					console.log(requestId);
+
+					Email.send({
+						Host : "smtp.elasticemail.com",
+						SecureToken : '8e0528ac-1759-4950-9fee-1ed4bacf7cdf',
+						Username : "lokhim128@gmail.com",
+						Password : "DAE29CB2D08D6D67E0BE0759CC2A19B1DA6A",
+						To : 'lokhim128@gmail.com',
+						From : "lokhim128@gmail.com",
+						Subject : "tommylhw.github.io",
+						Body : 
+						"Visitor IP: " + response.ip + "<br>" + 
+						"Location: " + response.continent_name + ", " + response.country_name + "<br>" + 
+						"Threat: " + threatData + "<br>" +
+						"FingerprintJS Id: " + requestId
+					}).then(
+						message => console.log(message)
+					);
+				})
+
+			
 
 
 		}, "jsonp");
@@ -254,6 +276,44 @@
 	</script>
 
 	<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+	<!-- <script>
+		// Initialize the agent at application startup.
+		const fpPromise = import('https://fpcdn.io/v3/qQ3AYY4BZwTjWOrGXXnB')
+			.then(FingerprintJS => FingerprintJS.load({
+				apiKey: 'qQ3AYY4BZwTjWOrGXXnB'
+			}))
+	
+		// Get the visitor identifier when you need it.
+		fpPromise
+			.then(fp => fp.get())
+			.then(result => {
+				// This is the visitor identifier:
+				const visitorId = result.visitorId;
+				
+				console.log(visitorId);
+			})
+	</script> -->
+
+	
+<script src='//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@2/dist/fingerprint2.min.js'>
+</script>
+
+<!-- <script>
+if (window.requestIdleCallback) {
+	requestIdleCallback(function() {
+		Fingerprint2.get(function(components) {
+			console.log(components) // an array of components: {key: ..., value: ...}
+		})
+	})
+} else {
+	setTimeout(function() {
+		Fingerprint2.get(function(components) {
+			console.log(components) // an array of components: {key: ..., value: ...}
+		})
+	}, 500)
+}
+</script> -->
 
 </body>
 </html>
