@@ -389,8 +389,16 @@ header ul li a i {
     /* border: 2px solid blue; */
 }
 
+.about-details table {
+    /* height: 60px; */
+}
+
 .about-details table tr {
-    height: 50px;
+    height: 60px;
+}
+
+.about-details table tr td {
+    padding: 20px 5px;
 }
 
 .about-details-title {
@@ -845,8 +853,10 @@ footer hr {
         border-collapse: separate;
         border-spacing: 20px;
     }
+
     .about-details table tr td {
         display: flex;
+        flex-direction: column;
         line-height: 25px;
     }
 }

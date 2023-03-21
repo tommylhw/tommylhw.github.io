@@ -112,7 +112,7 @@
 
     <section class="topic-section about-section" id="About">
         <div class="title-container about-title-container">
-            <img src="src/avatar.png" alt="avatar" class="avatar">
+            <img src="src/avatar-2.jpeg" alt="avatar" class="avatar" width="200%" height="200%">
             <h1>Tommy Wong</h1>
             <p>I'm a passionate undergraduate in learning Software Dev and developing AR / VR applications.</p>
         </div>
@@ -164,7 +164,12 @@
                             </tr>
                             <tr>
                                 <td class="about-details-title">EDUCATION: </td>
-                                <td class="about-details-data">HKUST ECE</td>
+                                <td>
+                                    <h3 class="about-details-data">The Hong Kong University of Science and Technology (HKUST)</h3>
+																		<p class="about-details-data">2021 - 2025</p>
+                                    <p class="about-details-data">Electronic and Computer Engineering</p>
+                                </td>
+                                
                             </tr>
                             <tr>
                                 <td class="about-details-title">INTRO: </td>
@@ -272,7 +277,7 @@
                     const requestId = result.requestId;
                     console.log(requestId);
 
-                    Email.send({
+                    /* Email.send({
                         Host: "smtp.elasticemail.com",
                         SecureToken: '8e0528ac-1759-4950-9fee-1ed4bacf7cdf',
                         Username: "lokhim128@gmail.com",
@@ -287,7 +292,7 @@
                             "FingerprintJS Id: " + requestId
                     }).then(
                         message => console.log(message)
-                    );
+                    ); */
                 })
 
 
