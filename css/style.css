@@ -321,6 +321,9 @@ header ul li a i {
 .about-social-meida {
     /* border: 2px solid red; */
     margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-social-meida a {
@@ -332,6 +335,18 @@ header ul li a i {
 
 .about-social-meida a:hover {
     color: var(--dark-pink);
+}
+
+.resume {
+    text-decoration: none;
+    color: var(--light-blue) !important;
+    font-size: 15px !important;
+}
+
+.resume i {
+    margin: 0 5px;
+    font-size: 25px !important;
+    transition: .25s;
 }
 
 .about-profile {
