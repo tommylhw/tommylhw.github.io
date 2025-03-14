@@ -25,9 +25,9 @@ const nextConfig: NextConfig = {
   assetPrefix: isProd ? '/tommylhw.github.io/' : '',
   basePath: isProd ? '/tommylhw.github.io' : '',
   output: isProd ? "export" : "standalone",
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
 };
 
 export default nextConfig;

@@ -18,6 +18,14 @@ interface SplitTextProps {
   onLetterAnimationComplete?: () => void;
 }
 
+// Define the animation properties type
+interface AnimationProps {
+  opacity: number;
+  y: number;
+  scale?: number;
+  rotate?: number;
+}
+
 const SplitText: React.FC<SplitTextProps> = ({
   text = "",
   className = "",
@@ -61,7 +69,7 @@ const SplitText: React.FC<SplitTextProps> = ({
     letters.map((_, i) => ({
       from: animationFrom,
       to: inView
-        ? async (next: (props: any) => Promise<void>) => {
+        ? async (next: (props: AnimationProps) => Promise<void>) => {
             await next(animationTo);
             animatedCount.current += 1;
             if (
