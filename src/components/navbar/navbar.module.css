@@ -1,0 +1,10 @@
+/* navbar.module.css */
+
+.navbar_ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.navbar_ul li p {
+  font-size: 12px;
+}

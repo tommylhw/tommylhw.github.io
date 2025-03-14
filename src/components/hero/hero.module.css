@@ -1,0 +1,20 @@
+.title {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Move further down for better curve visibility */
+  left: 5%; /* Slightly offset to match the image */
+  width: 90%; /* Slightly wider to match the image */
+  height: 12px; /* Increased height to allow for a more pronounced curve */
+  background: #333; /* Solid background for the underline */
+  border-radius: 100% 100% 0 0; /* Stronger curve on top, flat on bottom */
+  transform: translateY(0) skewX(-10deg); /* Slight skew for a more natural curve */
+}
