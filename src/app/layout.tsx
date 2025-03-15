@@ -66,7 +66,7 @@ export default function RootLayout({
       >
         <ScrollProvider>
           
-          <div className="fixed w-full z-50">
+          <div className="fixed w-full z-100">
             <Navbar />
           </div>
 
