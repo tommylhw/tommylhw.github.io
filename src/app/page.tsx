@@ -16,7 +16,7 @@ const Home = () => {
       sparkCount={8}
       duration={400}
     >
-      <div className="max-w-full border-1 flex flex-col justify-center items-center w-screen bg-[#F7F8FA]n font-montserrat max-md:px-[20px]">
+      <div className="flex flex-col justify-center items-center w-screen bg-[#F7F8FA]n font-montserrat max-md:px-[20px]">
         <Hero />
         <Project />
         <Reconition />
