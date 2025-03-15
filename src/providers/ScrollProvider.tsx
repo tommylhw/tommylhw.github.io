@@ -36,7 +36,7 @@ const ScrollProvider = ({ children }: { children: ReactNode }) => {
         lenisRef.destroy();
       }
     };
-  }, [lenisRef, rafState]);
+  }, []);
 
   return (
     <SmoothScrollerContext.Provider value={lenisRef}>
