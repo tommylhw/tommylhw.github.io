@@ -71,17 +71,17 @@ const Awards = () => {
           />
           <AwardCard
             image="/images/awards/21st_1.jpg"
-            title="2019 Qianhai Guangdong-Hong Kong-Macao Youth Innovation and Entrepreneurship Competition"
+            title="The 21st Hong Kong Youth Science and Technology Invention Competition"
             subTitle="First Place in Computer Science and Information Technology (Senior section)"
           />
           <AwardCard
             image="/images/awards/21st_2.jpg"
-            title="2019 Qianhai Guangdong-Hong Kong-Macao Youth Innovation and Entrepreneurship Competition"
+            title="The 21st Hong Kong Youth Science and Technology Invention Competition"
             subTitle="Bull.B Tech Award for Computer Science and Information Technology"
           />
           <AwardCard
             image="/images/awards/21st_3.jpg"
-            title="2019 Qianhai Guangdong-Hong Kong-Macao Youth Innovation and Entrepreneurship Competition"
+            title="The 21st Hong Kong Youth Science and Technology Invention Competition"
             subTitle="Regional Affiliate Award for Intel International Science and Engineering Grand Prix Intel Special Computer Science Special Award"
           />
         </div>
