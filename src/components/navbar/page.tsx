@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import style from "./navbar.module.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
