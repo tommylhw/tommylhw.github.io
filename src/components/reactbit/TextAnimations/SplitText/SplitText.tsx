@@ -57,7 +57,12 @@ const SplitText: React.FC<SplitTextProps> = ({
     letters.map((_, i) => ({
       from: animationFrom,
       to: inView
-        ? async (next: (props: {opacity: number, transform: string}) => Promise<void>) => {
+        ? async (
+            next: (props: {
+              opacity: number;
+              transform: string;
+            }) => Promise<void>
+          ) => {
             await next(animationTo);
             animatedCount.current += 1;
             if (
@@ -90,13 +95,15 @@ const SplitText: React.FC<SplitTextProps> = ({
               letterIndex;
 
             return (
-              <animated.span
-                key={index}
-                style={springs[index] as unknown as React.CSSProperties}
-                className="inline-block transform transition-opacity will-change-transform"
-              >
-                {letter}
-              </animated.span>
+              <span className="inline-block transform transition-opacity will-change-transform">
+                <animated.span
+                  key={index}
+                  style={springs[index] as unknown as React.CSSProperties}
+                  {...({ children: letter } as any)}
+                >
+                  {/* {letter} */}
+                </animated.span>
+              </span>
             );
           })}
           <span style={{ display: "inline-block", width: "0.3em" }}>
@@ -107,5 +114,6 @@ const SplitText: React.FC<SplitTextProps> = ({
     </p>
   );
 };
+
 
 export default SplitText;
