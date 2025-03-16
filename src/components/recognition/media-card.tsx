@@ -30,9 +30,9 @@ const MediaCard = ({
           transition: {
             duration: 0.5,
             ease: "easeInOut",
-            // type: "spring",
-            // stiffness: 100,
-            // damping: 10,
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
           },
         },
       }}
