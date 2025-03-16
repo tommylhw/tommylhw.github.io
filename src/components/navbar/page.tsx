@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { isMobile } from 'react-device-detect';
 
 // components
 import MarkHighlight from "../mark-highlight";
@@ -32,14 +33,14 @@ const Navbar = () => {
   //   // console.log("Page scroll: ", latest)
   // });
 
-  const [width, setWidth] = useState<number>(0);
+  // const [width, setWidth] = useState<number>(0);
 
-  useEffect(() => {
-    setWidth(window.innerWidth); // Set initial width on mount
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth); // Set initial width on mount
+  //   const handleResize = () => setWidth(window.innerWidth);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   useGSAP(() => {
     // First animation: Background color, blur, and border on scroll
@@ -69,7 +70,7 @@ const Navbar = () => {
 
     // Second animation: Max-width and border on scroll
     gsap.to(".navbar", {
-      maxWidth: width > 600 ? 600 : 300,
+      maxWidth: isMobile ? 300 : 600,
       backgroundColor: "rgba(255, 255, 255, 0.5)",
       backdropFilter: "blur(10px)",
       border: "1px solid rgba(226, 232, 240, 1)",

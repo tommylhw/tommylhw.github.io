@@ -202,6 +202,4 @@ const Hero = () => {
   );
 };
 
-// gap-[50px] max-md:gap-[25px] max-520:gap-[0px] max-520:item-start w-full
-
 export default Hero;

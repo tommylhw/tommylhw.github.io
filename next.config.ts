@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   // webpack(config) {
@@ -16,14 +16,36 @@ const nextConfig: NextConfig = {
   //   });
   //   return config;
   // },
+  // images: {
+  //   domains: ["picsum.photos", "assets.aceternity.com", "api.microlink.io"],
+  // },
   images: {
-    domains: ["picsum.photos", "assets.aceternity.com", "api.microlink.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  assetPrefix: isProd ? '/tommylhw.github.io/' : '',
-  basePath: isProd ? '/tommylhw.github.io' : '',
+  assetPrefix: isProd ? "/tommylhw.github.io/" : "",
+  basePath: isProd ? "/tommylhw.github.io" : "",
   output: isProd ? "export" : "standalone",
   // eslint: {
   //   ignoreDuringBuilds: true,
