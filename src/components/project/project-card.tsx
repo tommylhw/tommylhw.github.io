@@ -46,7 +46,7 @@ const ProjectCard = ({ project }: { project: PROJECT }) => {
         </PinContainer>
       </BrowserView>
       <MobileView>
-        <div className="w-[300px]  bg-white aspect-square p-4 m-2 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)]">
+        <div className="w-full bg-white aspect-square p-4 my-2 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)]">
           <div className="flex flex-col justify-between gap-2 w-full h-full">
             <div className="flex flex-col gap-1">
               <p className="text-[14px] font-bold leading-[18px]">
@@ -57,14 +57,14 @@ const ProjectCard = ({ project }: { project: PROJECT }) => {
               </p>
             </div>
 
-            <div className="rounded-xl">
+            <div>
               <Image
                 src={project.img}
                 alt=""
                 width={0}
                 height={0}
                 sizes="100%"
-                className="rounded-xl w-full shadow-lg"
+                className="rounded-[5px] w-full shadow-lg"
               />
             </div>
           </div>
