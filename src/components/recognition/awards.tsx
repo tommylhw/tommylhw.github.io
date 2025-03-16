@@ -65,7 +65,7 @@ const Awards = () => {
             subTitle="CTM Digital Macao Award"
           />
           <AwardCard
-            image="/images/awards/TheGreaterBay2019.png"
+            image="/images/awards/TheGreaterBay2019.jpg"
             title="2019 Qianhai Guangdong-Hong Kong-Macao Youth Innovation and Entrepreneurship Competition"
             subTitle="Merit Award in Senior Students Group"
           />

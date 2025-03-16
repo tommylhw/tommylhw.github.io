@@ -1,77 +1,110 @@
-"use client";
-import React, { useRef, useEffect } from "react";
-import { motion, useAnimate } from "framer-motion";
-
-interface AnimationProps {
-  opacity: number;
-  y: number;
-  [key: string]: number | string;
-}
+import { useSprings, animated, SpringConfig } from "@react-spring/web";
+import { useEffect, useRef, useState } from "react";
 
 interface SplitTextProps {
-  text: string;
-  animationFrom: AnimationProps;
-  animationTo: AnimationProps;
-  delay: number;
-  easing: (t: number) => number;
-  inView: boolean;
+  text?: string;
+  className?: string;
+  delay?: number;
+  animationFrom?: { opacity: number; transform: string };
+  animationTo?: { opacity: number; transform: string };
+  easing?: SpringConfig["easing"];
+  threshold?: number;
+  rootMargin?: string;
+  textAlign?: "left" | "right" | "center" | "justify" | "start" | "end";
   onLetterAnimationComplete?: () => void;
 }
 
-const SplitText = ({
-  text,
-  animationFrom,
-  animationTo,
-  delay,
-  easing,
-  inView,
+const SplitText: React.FC<SplitTextProps> = ({
+  text = "",
+  className = "",
+  delay = 100,
+  animationFrom = { opacity: 0, transform: "translate3d(0,40px,0)" },
+  animationTo = { opacity: 1, transform: "translate3d(0,0,0)" },
+  easing = (t: number) => t,
+  threshold = 0.1,
+  rootMargin = "-100px",
+  textAlign = "center",
   onLetterAnimationComplete,
-}: SplitTextProps) => {
-  const letters = text.split("");
-  const [scope, animate] = useAnimate();
+}) => {
+  const words = text.split(" ").map((word) => word.split(""));
+  const letters = words.flat();
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLParagraphElement>(null);
   const animatedCount = useRef(0);
 
   useEffect(() => {
-    if (inView) {
-      letters.forEach((_, i) => {
-        animate(
-          `.letter-${i}`,
-          animationTo,
-          {
-            delay: i * delay,
-            ease: easing,
-            duration: 0.5, // Adjust duration as needed
-          },
-        ).then(() => {
-          animatedCount.current += 1;
-          if (
-            animatedCount.current === letters.length &&
-            onLetterAnimationComplete
-          ) {
-            onLetterAnimationComplete();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          if (ref.current) {
+            observer.unobserve(ref.current);
           }
-        });
-      });
-    } else {
-      letters.forEach((_, i) => {
-        animate(`.letter-${i}`, animationFrom, { duration: 0 });
-      });
+        }
+      },
+      { threshold, rootMargin }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }, [inView, animate, delay, easing, animationFrom, animationTo, onLetterAnimationComplete, letters]);
+
+    return () => observer.disconnect();
+  }, [threshold, rootMargin]);
+
+  const springs = useSprings(
+    letters.length,
+    letters.map((_, i) => ({
+      from: animationFrom,
+      to: inView
+        ? async (next: (props: {opacity: number, transform: string}) => Promise<void>) => {
+            await next(animationTo);
+            animatedCount.current += 1;
+            if (
+              animatedCount.current === letters.length &&
+              onLetterAnimationComplete
+            ) {
+              onLetterAnimationComplete();
+            }
+          }
+        : animationFrom,
+      delay: i * delay,
+      config: { easing },
+    }))
+  );
 
   return (
-    <div ref={scope}>
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          className={`letter-${index}`}
-          initial={animationFrom}
-          style={{ display: "inline-block" }}
+    <p
+      ref={ref}
+      className={`split-parent overflow-hidden inline ${className}`}
+      style={{ textAlign, whiteSpace: "normal", wordWrap: "break-word" }}
+    >
+      {words.map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          style={{ display: "inline-block", whiteSpace: "nowrap" }}
         >
-          {letter}
-        </motion.span>
+          {word.map((letter, letterIndex) => {
+            const index =
+              words.slice(0, wordIndex).reduce((acc, w) => acc + w.length, 0) +
+              letterIndex;
+
+            return (
+              <animated.span
+                key={index}
+                style={springs[index] as unknown as React.CSSProperties}
+                className="inline-block transform transition-opacity will-change-transform"
+              >
+                {letter}
+              </animated.span>
+            );
+          })}
+          <span style={{ display: "inline-block", width: "0.3em" }}>
+            &nbsp;
+          </span>
+        </span>
       ))}
-    </div>
+    </p>
   );
 };
 

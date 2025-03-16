@@ -13,6 +13,8 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 import Squares from "../reactbit/Backgrounds/Squares/Squares";
 import ClickSpark from "@/components/reactbit/Animations/ClickSpark/ClickSpark";
 import { LinkPreview } from "@/components/ui/link-preview";
+import SplitText from "@/components/reactbit/TextAnimations/SplitText/SplitText";
+import TrueFocus from "@/components/reactbit/TextAnimations/TrueFocus/TrueFocus";
 
 // icons
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -45,8 +47,8 @@ const Hero = () => {
                     showTooltip={true}
                     displayOverlayContent={true}
                     overlayContent={
-                      <div className="tilted-card-demo-text text-[#fff] text-lg font-bold font-kalam mt-[0] mr-[0] mb-[20px] ml-[20px] backdrop-filter backdrop-blur-[80px] bg-[rgba(95,_95,_95,_0.5)] px-[10px] py-0 rounded-[10px]">
-                        {/* <TrueFocus
+                      <div className="flex justify-center items-center text-[#fff] text-lg font-bold font-kalam mt-[0] mr-[0] mb-[20px] ml-[20px] backdrop-filter backdrop-blur-[80px] bg-[rgba(95,_95,_95,_0.5)] px-[10px] py-0 rounded-[5px]"> {/* tilted-card-demo-text  */}
+                        <TrueFocus
                           sentence="Tommy Wong"
                           manualMode={false}
                           blurAmount={2}
@@ -57,8 +59,8 @@ const Hero = () => {
                             fontSize: "18px",
                             fontWeight: "bold",
                           }}
-                        /> */}
-                        Tommy Wong
+                        />
+                        {/* Tommy Wong */}
                       </div>
                     }
                   />
@@ -66,7 +68,7 @@ const Hero = () => {
               </div>
               <div className="flex flex-col items-start px-[5px] py-[0] ">
                 <div className="flex flex-col justify-center items-start">
-                  {/* <SplitText
+                  <SplitText
                     text="Hi, I'm Tommy Wong"
                     className="text-lg max-875:text-[16px] font-bold font-kalam text-[#A1A1A1]"
                     animationFrom={{
@@ -80,8 +82,8 @@ const Hero = () => {
                     // easing="easeOutCubic"
                     threshold={0.2}
                     rootMargin="-50px"
-                  /> */}
-                  <p className="text-lg max-875:text-[16px] font-bold font-kalam text-[#A1A1A1]">Hi, I am Tommy Wong</p>
+                  />
+                  {/* <p className="text-lg max-875:text-[16px] font-bold font-kalam text-[#A1A1A1]">Hi, I am Tommy Wong</p> */}
                   <p
                     className={`text-[2em] max-875:text-[24px] mt-4 max-1100:mt-2 font-bold`}
                   >
