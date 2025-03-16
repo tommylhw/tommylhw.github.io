@@ -51,18 +51,22 @@ const Navbar = () => {
         scrub: true,
         onEnter: () => {
           gsap.to(".navbar", {
-            duration: 1,
+            duration: 0.3,
             backgroundColor: "rgba(255, 255, 255, 0.5)",
             backdropFilter: "blur(10px)",
             border: "1px solid rgba(226, 232, 240, 0.5)",
+            paddingTop: 10,
+            paddingBottom: 10,
           });
         },
         onLeaveBack: () => {
           gsap.to(".navbar", {
-            duration: 1,
+            duration: 0.3,
             backgroundColor: "rgba(255, 255, 255, 0)", // Fully transparent
             backdropFilter: "none", // Remove blur
             border: "1px solid rgba(226, 232, 240, 0)", // Transparent border
+            paddingTop: 20,
+            paddingBottom: 20,
           });
         },
       },
@@ -105,8 +109,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-[50px]">
-      <div className="navbar flex justify-center items-center w-full h-[90%] max-w-[1200px] px-[20px] py-[0] rounded-[80px] bg-[rgba(255,_255,_255,_0)] border-[1px] border-solid border-[rgba(226,232,240,0)]">
+    <div className="flex justify-center items-center w-full mt-[10px]">
+      <div className="navbar flex justify-center items-center w-full py-[20px] max-w-[1200px] rounded-[80px] bg-[rgba(255,_255,_255,_0)] border-[1px] border-solid border-[rgba(226,232,240,0)]">
         <ul
           className={`${style.navbar_ul} flex justify-center items-center gap-[20px]`}
         >
