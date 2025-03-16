@@ -95,11 +95,13 @@ const SplitText: React.FC<SplitTextProps> = ({
               letterIndex;
 
             return (
-              <span className="inline-block transform transition-opacity will-change-transform">
+              <span
+                key={index}
+                className="inline-block transform transition-opacity will-change-transform"
+              >
                 <animated.span
-                  key={index}
                   style={springs[index] as unknown as React.CSSProperties}
-                  {...({ children: letter } as any)}
+                  {...{ children: letter }}
                 >
                   {/* {letter} */}
                 </animated.span>
@@ -114,6 +116,5 @@ const SplitText: React.FC<SplitTextProps> = ({
     </p>
   );
 };
-
 
 export default SplitText;
