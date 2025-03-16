@@ -152,7 +152,7 @@ const Awards = () => {
       <div className="w-full flex flex-col justify-start 520:px-10">
         <div className="w-full flex gap-2 items-center">
           <BsStars className="text-[14px] text-highlight" />
-          <p className="text-highlight font-bold text-[14px]">
+          <p className="text-highlight font-bold text-[14px] font-roc-grotesk">
             AWARD & RECOGNITION
           </p>
         </div>
@@ -163,7 +163,7 @@ const Awards = () => {
             scrollStart="center bottom+=50%"
             scrollEnd="bottom bottom-=50%"
             stagger={0.03}
-            textClassName="text-[48px] font-extrabold"
+            textClassName="text-[48px] font-extrabold font-roc-grotesk"
           >
             Awards
           </ScrollFloat>

@@ -85,7 +85,7 @@ const Hero = () => {
                   />
                   {/* <p className="text-lg max-875:text-[16px] font-bold font-kalam text-[#A1A1A1]">Hi, I am Tommy Wong</p> */}
                   <p
-                    className={`text-[2em] max-875:text-[24px] mt-4 max-1100:mt-2 font-bold`}
+                    className={`text-[2em] max-875:text-[24px] mt-4 max-1100:mt-2 font-bold font-roc-grotesk`}
                   >
                     A passionate
                   </p>
@@ -93,7 +93,7 @@ const Hero = () => {
                   <div className="mt-3 max-520:mt-1 flex flex-row flex-wrap gap-4 max-875:gap-3 items-center ">
                     <RotatingText
                       texts={["Website", "Mobile App", "Full Stack"]}
-                      mainClassName="px-1 bg-cyan-300 text-white font-bold overflow-hidden justify-center rounded-lg text-[2em] max-875:text-[24px] w-60 max-875:w-40"
+                      mainClassName="px-1 bg-cyan-300 text-white font-bold font-roc-grotesk overflow-hidden justify-center rounded-lg text-[2em] max-875:text-[24px] w-60 max-875:w-40"
                       staggerFrom={"last"}
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
@@ -107,7 +107,7 @@ const Hero = () => {
                       }}
                       rotationInterval={3000}
                     />
-                    <p className={`text-[2em] max-875:text-[24px] font-bold`}>
+                    <p className={`text-[2em] max-875:text-[24px] font-bold font-roc-grotesk`}>
                       developer
                     </p>
                   </div>
