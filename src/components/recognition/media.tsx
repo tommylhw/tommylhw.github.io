@@ -3,6 +3,7 @@ import React from "react";
 
 // components
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
+import ScrollReveal from "../reactbit/TextAnimations/ScrollReveal/ScrollReveal";
 
 // icons
 import { BsStars } from "react-icons/bs";
@@ -65,26 +66,30 @@ const Media = () => {
       date: "Aug 2019",
       url: "https://www.bastillepost.com/hongkong/article/4830970-%EF%BB%BF%E6%B8%AF%E4%BB%A3%E8%A1%A8%E6%8F%9A%E5%A8%81%E5%85%A8%E5%9C%8B%E7%A7%91%E5%89%B5%E8%B3%BD%E3%80%80%E5%8B%87%E5%A5%AA%E9%80%BE60%E7%8D%8E",
       img: "/images/media/media_08.jpg",
-    }, {
+    },
+    {
       title: "TVB: 創科導航 ",
       date: "Mar 2020",
       url: "https://www.youtube.com/watch?v=u9d_nJ56B9w",
       img: "/images/media/media_09.jpg",
-    }, 
+    },
     {
-      title: "HKGOV: “Enriched IT Programme” Partner School students won Gold and Bronze Awards in the Hong Kong ICT Awards 2019 Student Innovation Award (Secondary School)",
+      title:
+        "HKGOV: “Enriched IT Programme” Partner School students won Gold and Bronze Awards in the Hong Kong ICT Awards 2019 Student Innovation Award (Secondary School)",
       date: "Mar 2019",
       url: "https://www.eitp.gov.hk/en/showcase/2018/eitp-partner-school-students-won-the-certificate-of-merit-in-the-hong-kong-ict-awards-2019-student-innovation-award-caswcmc.php",
       img: "/images/media/media_10.jpg",
     },
     {
-      title: "TOPICK: 【科研發明】中六生研AR遊戲識別讀寫障礙學童奪冠 開發成本僅約20港元",
+      title:
+        "TOPICK: 【科研發明】中六生研AR遊戲識別讀寫障礙學童奪冠 開發成本僅約20港元",
       date: "Sep 2020",
       url: "https://topick.hket.com/article/2743251/%E3%80%90%E7%A7%91%E7%A0%94%E7%99%BC%E6%98%8E%E3%80%91%E4%B8%AD%E5%85%AD%E7%94%9F%E7%A0%94AR%E9%81%8A%E6%88%B2%E8%AD%98%E5%88%A5%E8%AE%80%E5%AF%AB%E9%9A%9C%E7%A4%99%E5%AD%B8%E7%AB%A5%E5%A5%AA%E5%86%A0%E3%80%80%E9%96%8B%E7%99%BC%E6%88%90%E6%9C%AC%E5%83%85%E7%B4%8420%E6%B8%AF%E5%85%83",
       img: "/images/media/media_11.jpg",
     },
     {
-      title: "SCMP: Hong Kong secondary students aim to help people identify learning difficulties",
+      title:
+        "SCMP: Hong Kong secondary students aim to help people identify learning difficulties",
       date: "Sep 2020",
       url: "https://www.scmp.com/yp/discover/lifestyle/features/article/3102498/hong-kong-secondary-students-aim-help-people",
       img: "/images/media/media_12.jpg",
@@ -108,7 +113,8 @@ const Media = () => {
       img: "/images/media/media_15.jpg",
     },
     {
-      title: "SKY POST: 青年創科 港中學生出征3大國際科學賽 創新科研勇奪多項殊榮",
+      title:
+        "SKY POST: 青年創科 港中學生出征3大國際科學賽 創新科研勇奪多項殊榮",
       date: "Dec 2020",
       url: "https://skypost.hk/article/2838886/%E9%9D%92%E5%B9%B4%E5%89%B5%E7%A7%91-%E6%B8%AF%E4%B8%AD%E5%AD%B8%E7%94%9F%E5%87%BA%E5%BE%813%E5%A4%A7%E5%9C%8B%E9%9A%9B%E7%A7%91%E5%AD%B8%E8%B3%BD-%E5%89%B5%E6%96%B0%E7%A7%91%E7%A0%94%E5%8B%87%E5%A5%AA%E5%A4%9A%E9%A0%85%E6%AE%8A%E6%A6%AE",
       img: "/images/media/media_16.jpg",
@@ -124,7 +130,7 @@ const Media = () => {
       date: "Oct 2020",
       url: "https://www.caswcmc.edu.hk/dataNCMS/CourseMedia/2021_2226203566/20201012_2658551721.pdf",
       img: "/images/media/media_18.jpg",
-    }
+    },
   ];
 
   return (
@@ -184,7 +190,7 @@ const Media = () => {
           disabled={false}
         /> */}
         <div className="mt-[-30px]">
-          <ScrollFloat
+          {/* <ScrollFloat
             animationDuration={0.3}
             scrollStart="center bottom+=20%"
             scrollEnd="bottom bottom-=50%"
@@ -193,7 +199,18 @@ const Media = () => {
           >
             A collection of all my press coverages, media interviews and related
             news.
-          </ScrollFloat>
+          </ScrollFloat> */}
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={5}
+            blurStrength={10}
+            gsapStart="top bottom-=20%"
+            gsapEnd="bottom bottom"
+            textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
+          >
+            A collection of all my press coverages, media interviews and related news.
+          </ScrollReveal>
         </div>
       </div>
 

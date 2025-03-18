@@ -19,6 +19,8 @@ interface ScrollRevealProps {
   textClassName?: string;
   rotationEnd?: string;
   wordAnimationEnd?: string;
+  gsapStart?: string;
+  gsapEnd?: string;
 }
 
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
@@ -32,6 +34,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   textClassName = "",
   rotationEnd = "bottom bottom",
   wordAnimationEnd = "bottom bottom",
+  gsapStart = "top bottom-=20%",
+  gsapEnd = "bottom bottom",
 }) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
@@ -66,7 +70,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
           trigger: el,
           scroller,
           start: "top bottom",
-          end: rotationEnd,
+          end: gsapEnd,
           scrub: true,
         },
       },
@@ -84,8 +88,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: "top bottom-=20%",
-          end: wordAnimationEnd,
+          start: gsapStart,
+          end: gsapEnd,
           scrub: true,
         },
       },
@@ -102,8 +106,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
           scrollTrigger: {
             trigger: el,
             scroller,
-            start: "top bottom-=20%",
-            end: wordAnimationEnd,
+            start: gsapStart,
+            end: gsapEnd,
             scrub: true,
           },
         },
