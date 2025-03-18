@@ -11,6 +11,10 @@ import "./globals.css";
 import "lenis/dist/lenis.css";
 import "aos/dist/aos.css";
 import ScrollProvider from "@/providers/ScrollProvider";
+import * as amplitude from '@amplitude/analytics-browser';
+
+amplitude.init('5c87539850106bef11f0c600774d75df', {"autocapture":true});
+
 
 // components
 import Navbar from "@/components/navbar/page";
