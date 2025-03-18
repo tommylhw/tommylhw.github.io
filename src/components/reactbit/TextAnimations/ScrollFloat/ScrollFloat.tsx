@@ -5,6 +5,7 @@
 import React, { useEffect, useMemo, useRef, ReactNode, RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { isMobile } from "react-device-detect"; // Assuming this is available
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,41 +54,81 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
 
     const charElements = el.querySelectorAll(".inline-block");
 
-    gsap.fromTo(
-      charElements,
-      {
-        willChange: "opacity, transform",
-        opacity: 0,
-        // yPercent: 120,
-        // scaleY: 2.3,
-        // scaleX: 0.7,
-        // transformOrigin: "50% 0%",
-        transform: "translateY(120%) scaleY(2.3) scaleX(0.7)", // Initial state using transform
-      },
-      {
-        duration: animationDuration,
-        ease: ease,
-        opacity: 1,
-        // yPercent: 0,
-        // scaleY: 1,
-        // scaleX: 1,
-        transform: "translateY(0%) scaleY(1) scaleX(1)", // Target state using transform
-        stagger: stagger,
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: scrollStart,
-          end: scrollEnd,
-          scrub: true,
+    let tl: GSAPTimeline; // Declare timeline variable
+
+    if (isMobile) {
+      // Mobile: Run full animation when component enters viewport
+      tl = gsap.timeline({ paused: true }); // Create paused timeline
+      tl.fromTo(
+        charElements,
+        {
+          willChange: "transform",
+          transform: "translateY(120%) scaleY(2.3) scaleX(0.7)",
+          opacity: 0,
         },
-      },
-    );
+        {
+          duration: animationDuration,
+          ease: ease,
+          transform: "translateY(0%) scaleY(1) scaleX(1)",
+          opacity: 1,
+          stagger: stagger,
+        }
+      );
+
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: el,
+        scroller,
+        start: "top 80%", // Start when 80% of the component is in view
+        onEnter: () => tl.play(),
+        onEnterBack: () => tl.play(), // Replay if scrolling back up
+        onLeave: () => tl.pause(0), // Pause at start if leaving viewport
+        onLeaveBack: () => tl.pause(0), // Pause at start if scrolling back out
+      });
+
+      // Check if component is already in view on mount
+      const rect = el.getBoundingClientRect();
+      const isInView =
+        rect.top >= 0 &&
+        rect.top <= window.innerHeight &&
+        rect.bottom >= 0 &&
+        rect.bottom <= window.innerHeight;
+      if (isInView) {
+        tl.play();
+      }
+
+      // Refresh ScrollTrigger to ensure proper initialization
+      ScrollTrigger.refresh();
+    } else {
+      // Desktop: Keep scroll-based animation with scrub
+      gsap.fromTo(
+        charElements,
+        {
+          willChange: "transform",
+          transform: "translateY(120%) scaleY(2.3) scaleX(0.7)",
+          opacity: 0,
+        },
+        {
+          duration: animationDuration,
+          ease: ease,
+          transform: "translateY(0%) scaleY(1) scaleX(1)",
+          opacity: 1,
+          stagger: stagger,
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start: scrollStart,
+            end: scrollEnd,
+            scrub: true,
+          },
+        }
+      );
+    }
 
     // Cleanup ScrollTrigger instances
     return () => {
+      if (tl) tl.kill(); // Kill the timeline if it exists
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-    
   }, [
     scrollContainerRef,
     animationDuration,
@@ -95,6 +136,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     scrollStart,
     scrollEnd,
     stagger,
+    isMobile,
   ]);
 
   return (
@@ -103,7 +145,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
       className={`my-5 overflow-hidden ${containerClassName}`}
     >
       <span
-        className={`inline-block  leading-[1.5] ${textClassName}`} // text-[clamp(1.6rem,4vw,3rem)]
+        className={`inline-block leading-[1.5] ${textClassName}`} // text-[clamp(1.6rem,4vw,3rem)]
       >
         {splitText}
       </span>

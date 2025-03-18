@@ -165,10 +165,10 @@ const Media = () => {
         {/* <p className="text-[48px] font-extrabold">Awards</p> */}
         <div className="mt-[-20px]">
           <ScrollFloat
-            animationDuration={0.3}
+            animationDuration={1}
             scrollStart="center bottom+=50%"
             scrollEnd="bottom bottom-=50%"
-            stagger={0.03}
+            stagger={0.1}
             textClassName="text-[48px] font-extrabold font-roc-grotesk"
           >
             Media
