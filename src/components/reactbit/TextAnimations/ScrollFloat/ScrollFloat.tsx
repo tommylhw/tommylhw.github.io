@@ -75,10 +75,10 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         }
       );
 
-      const scrollTrigger = ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: el,
         scroller,
-        start: "top 80%", // Start when 80% of the component is in view
+        start: "top 90%", // Start when 80% of the component is in view
         onEnter: () => tl.play(),
         onEnterBack: () => tl.play(), // Replay if scrolling back up
         onLeave: () => tl.pause(0), // Pause at start if leaving viewport
@@ -135,8 +135,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     ease,
     scrollStart,
     scrollEnd,
-    stagger,
-    isMobile,
+    stagger
   ]);
 
   return (
