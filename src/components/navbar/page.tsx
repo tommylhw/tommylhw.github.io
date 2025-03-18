@@ -15,34 +15,6 @@ import MarkHighlight from "../mark-highlight";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
 
 const Navbar = () => {
-  // const [scrollHeight, setScrollHeight] = useState<number>(0);
-  // const { scrollY } = useScroll();
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollHeight(window.scrollY as any);
-  //   };
-  //   console.log("Scroll height: ", scrollHeight);
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [scrollHeight]);
-
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   setScrollHeight(latest);
-  //   // console.log("Page scroll: ", latest)
-  // });
-
-  // const [width, setWidth] = useState<number>(0);
-
-  // useEffect(() => {
-  //   setWidth(window.innerWidth); // Set initial width on mount
-  //   const handleResize = () => setWidth(window.innerWidth);
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
   useGSAP(() => {
     // First animation: Background color, blur, and border on scroll
     gsap.to(".navbar", {
@@ -83,7 +55,7 @@ const Navbar = () => {
       scrollTrigger: {
         trigger: ".navbar",
         start: "top top",
-        end: "180 top",
+        end: isMobile ? "50 top" : "180 top",
         scrub: true,
       },
     });
@@ -110,7 +82,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full mt-[10px]">
+    <div className="flex justify-center items-center w-[95%] m-auto mt-[10px]">
       <div className="navbar flex justify-center items-center w-full py-[20px] max-w-[1200px] rounded-[80px] bg-[rgba(255,_255,_255,_0)] border-[1px] border-solid border-[rgba(226,232,240,0)] relative">
         <div className="flex justify-center items-center absolute left-0 ml-[5px]">
           <Image

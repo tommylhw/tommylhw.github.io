@@ -24,9 +24,9 @@ const MediaCard = ({
       initial="offscreen"
       whileInView="onscreen"
       variants={{
-        offscreen: { scale: 0 },
+        offscreen: { transform: "scale(0.5)" },
         onscreen: {
-          scale: 1,
+          transform: "scale(1)",
           transition: {
             duration: 0.5,
             ease: "easeInOut",
