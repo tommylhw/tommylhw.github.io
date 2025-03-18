@@ -111,7 +111,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-center items-center w-full mt-[10px]">
-      <div className="navbar flex justify-center items-center w-full py-[20px] max-w-[1200px] rounded-[80px] bg-[rgba(255,_255,_255,_0)] border-[1px] border-solid border-[rgba(226,232,240,1)] relative">
+      <div className="navbar flex justify-center items-center w-full py-[20px] max-w-[1200px] rounded-[80px] bg-[rgba(255,_255,_255,_0)] border-[1px] border-solid border-[rgba(226,232,240,0)] relative">
         <div className="flex justify-center items-center absolute left-0 ml-[5px]">
           <Image
             src="/images/logo/icon-circle.png"
