@@ -58,18 +58,20 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
       {
         willChange: "opacity, transform",
         opacity: 0,
-        yPercent: 120,
-        scaleY: 2.3,
-        scaleX: 0.7,
-        transformOrigin: "50% 0%",
+        // yPercent: 120,
+        // scaleY: 2.3,
+        // scaleX: 0.7,
+        // transformOrigin: "50% 0%",
+        transform: "translateY(120%) scaleY(2.3) scaleX(0.7)", // Initial state using transform
       },
       {
         duration: animationDuration,
         ease: ease,
         opacity: 1,
-        yPercent: 0,
-        scaleY: 1,
-        scaleX: 1,
+        // yPercent: 0,
+        // scaleY: 1,
+        // scaleX: 1,
+        transform: "translateY(0%) scaleY(1) scaleX(1)", // Target state using transform
         stagger: stagger,
         scrollTrigger: {
           trigger: el,
@@ -80,6 +82,12 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         },
       },
     );
+
+    // Cleanup ScrollTrigger instances
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+    
   }, [
     scrollContainerRef,
     animationDuration,
