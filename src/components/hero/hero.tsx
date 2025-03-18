@@ -90,16 +90,16 @@ const Hero = () => {
                     A passionate
                   </p>
 
-                  <div className="mt-3 max-520:mt-1 flex flex-row flex-wrap gap-4 max-875:gap-3 items-center ">
+                  <div className="mt-3 max-520:mt-1 flex flex-row flex-wrap gap-4 max-875:gap-3 max-520:gap-2 items-center ">
                     <RotatingText
                       texts={["Website", "Mobile App", "Full Stack"]}
-                      mainClassName="px-1 bg-cyan-300 text-white font-bold font-roc-grotesk overflow-hidden justify-center rounded-lg text-[2em] max-875:text-[24px] w-60 max-875:w-40"
+                      mainClassName=" bg-cyan-300 text-white font-bold font-roc-grotesk overflow-hidden justify-center items-center rounded-lg text-[2em] max-875:text-[24px] max-520:text-[22px] w-60 max-875:w-45"
                       staggerFrom={"last"}
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
                       exit={{ y: "-120%" }}
                       staggerDuration={0.025}
-                      splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                      splitLevelClassName="overflow-hidden "
                       transition={{
                         type: "spring",
                         damping: 30,
@@ -107,7 +107,7 @@ const Hero = () => {
                       }}
                       rotationInterval={3000}
                     />
-                    <p className={`text-[2em] max-875:text-[24px] font-bold font-roc-grotesk`}>
+                    <p className={`text-[2em] max-875:text-[24px] max-520:text-[22px] font-bold font-roc-grotesk`}>
                       developer
                     </p>
                   </div>
