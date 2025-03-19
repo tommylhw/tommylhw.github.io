@@ -70,17 +70,17 @@ export default function RootLayout({
         <ScrollProvider>
           {/* Top shadow */}
           <div
-            className="fixed top-0 left-0 w-full h-16 bg-gradient-to-b from-gray-100 to-transparent z-1000"
+            className="fixed top-0 left-0 w-full h-16 bg-gradient-to-b from-gray-100 to-transparent z-100"
             style={{ pointerEvents: "none" }} // Prevent interaction
           ></div>
 
           {/* Bottom shadow */}
           <div
-            className="fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-100 to-transparent z-1000"
+            className="fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-100 to-transparent z-100"
             style={{ pointerEvents: "none" }} // Prevent interaction
           ></div>
 
-          <div className="fixed w-full z-100">
+          <div className="fixed w-full z-1000">
             <Navbar />
           </div>
 
