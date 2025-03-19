@@ -6,7 +6,6 @@ import { isMobile } from "react-device-detect";
 import { Timeline } from "@/components/ui/timeline";
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
 import AwardCard from "./award-card";
-import ShinyText from "../reactbit/TextAnimations/ShinyText/ShinyText";
 
 // icons
 import { BsStars } from "react-icons/bs";
