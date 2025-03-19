@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
+import { isMobile } from "react-device-detect";
 
 // components
 import { Timeline } from "@/components/ui/timeline";
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
 import AwardCard from "./award-card";
+import ShinyText from "../reactbit/TextAnimations/ShinyText/ShinyText";
 
 // icons
 import { BsStars } from "react-icons/bs";
+
 
 const Awards = () => {
   const awards = [
@@ -155,6 +158,7 @@ const Awards = () => {
           <p className="text-highlight font-bold text-[14px] font-roc-grotesk">
             AWARD & RECOGNITION
           </p>
+          {/* <ShinyText text="AWARD & RECOGNITION" disabled={true} speed={3} className='text-highlight font-bold text-[14px] font-roc-grotesk' /> */}
         </div>
         {/* <p className="text-[48px] font-extrabold">Awards</p> */}
         <div className="mt-[-20px]">
@@ -178,20 +182,27 @@ const Awards = () => {
           disabled={false}
         /> */}
         <div className="mt-[-30px]">
-          <ScrollFloat
-            animationDuration={0.3}
-            scrollStart="center bottom+=20%"
-            scrollEnd="bottom bottom-=50%"
-            stagger={0.03}
-            textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
-          >
-            Since 2018, I have actively participated in a variety of STEM
-            competitions at the local and international
-          </ScrollFloat>
+          {isMobile ? (
+            <p className="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]">
+              Since 2018, I have actively participated in a variety of STEM
+              competitions at the local and international
+            </p>
+          ) : (
+            <ScrollFloat
+              animationDuration={0.3}
+              scrollStart="center bottom+=20%"
+              scrollEnd="bottom bottom-=50%"
+              stagger={0.03}
+              textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
+            >
+              Since 2018, I have actively participated in a variety of STEM
+              competitions at the local and international
+            </ScrollFloat>
+          )}
         </div>
       </div>
 
-      <div className="w-full  z-[-1px]">
+      <div className="w-full z-[-1px]">
         <Timeline data={awards} />
       </div>
     </div>

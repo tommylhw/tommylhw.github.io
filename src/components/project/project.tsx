@@ -1,4 +1,5 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 
 // components
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
@@ -54,16 +55,23 @@ const Project = () => {
         </div>
 
         <div className="mt-[-30px]">
-          <ScrollFloat
-            animationDuration={1}
-            scrollStart="center bottom+=20%"
-            scrollEnd="bottom bottom-=50%"
-            stagger={0.03}
-            textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
-          >
-            A collection of my STEM related projects and software development
-            projects
-          </ScrollFloat>
+          {isMobile ? (
+            <p className="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]">
+              A collection of my STEM related projects and software development
+              projects
+            </p>
+          ) : (
+            <ScrollFloat
+              animationDuration={1}
+              scrollStart="center bottom+=20%"
+              scrollEnd="bottom bottom-=50%"
+              stagger={0.03}
+              textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
+            >
+              A collection of my STEM related projects and software development
+              projects
+            </ScrollFloat>
+          )}
         </div>
       </div>
 

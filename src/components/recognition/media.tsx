@@ -1,13 +1,14 @@
 // "use client";
 import React from "react";
+import { isMobile } from "react-device-detect";
 
 // components
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
-import ScrollReveal from "../reactbit/TextAnimations/ScrollReveal/ScrollReveal";
 
 // icons
 import { BsStars } from "react-icons/bs";
 import MediaCard from "./media-card";
+
 
 interface MediaProps {
   title: string;
@@ -190,17 +191,25 @@ const Media = () => {
           disabled={false}
         /> */}
         <div className="mt-[-30px]">
-          {/* <ScrollFloat
-            animationDuration={0.3}
-            scrollStart="center bottom+=20%"
-            scrollEnd="bottom bottom-=50%"
-            stagger={0.03}
-            textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
-          >
-            A collection of all my press coverages, media interviews and related
-            news.
-          </ScrollFloat> */}
-          <ScrollReveal
+          {isMobile ? (
+            <p className="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]">
+              A collection of all my press coverages, media interviews and
+              related news.
+            </p>
+          ) : (
+            <ScrollFloat
+              animationDuration={0.3}
+              scrollStart="center bottom+=20%"
+              scrollEnd="bottom bottom-=50%"
+              stagger={0.03}
+              textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
+            >
+              A collection of all my press coverages, media interviews and
+              related news.
+            </ScrollFloat>
+          )}
+
+          {/* <ScrollReveal
             baseOpacity={0}
             enableBlur={true}
             baseRotation={5}
@@ -210,7 +219,7 @@ const Media = () => {
             textClassName="text-gray-600 w-[40%] max-875:w-[70%] max-520:w-[100%] text-[13px]"
           >
             A collection of all my press coverages, media interviews and related news.
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </div>
 
