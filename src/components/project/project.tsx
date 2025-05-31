@@ -40,9 +40,9 @@ const Project = () => {
   return (
     <div
       id="projects"
-      className="w-full max-w-[1200px] flex flex-col justify-center items-center gap-4 max-520:gap-0 my-10"
+      className="w-full max-w-[1200px] flex flex-col justify-center items-center gap-4 max-520:gap-0 my-10 px-0 520:px-10"
     >
-      <div className="w-full flex flex-col justify-start px-0 520:px-10">
+      <div className="w-full flex flex-col justify-start ">
         <div className="w-full flex gap-2 items-center ">
           <BsStars className="text-[14px] text-highlight" />
           <p className="text-highlight font-bold text-[14px] font-roc-grotesk">
@@ -83,9 +83,9 @@ const Project = () => {
         </div>
       </div>
 
-      <div className="w-full p-2 flex max-md:flex-col max-md:gap-3 justify-start max-md:items-center items-start">
+      <div className="w-full flex max-md:flex-col max-md:gap-3 justify-center max-md:items-center items-start flex-wrap border-1">
         {projects.map((project, index) => (
-          <div key={index} className="">
+          <div key={index} className="border-1 p-[20px] w-[350px] max-520:w-auto">
             <ProjectCard project={project} />
           </div>
         ))}

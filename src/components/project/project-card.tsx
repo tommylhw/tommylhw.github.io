@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: PROJECT }) => {
         <PinContainer
           title={project.pinTitle}
           href={project.pinUrl}
-          className="w-[300px] max-875:w-[250px] bg-white aspect-square p-0"
+          className="w-[250px] max-875:w-[200px] bg-white aspect-square p-0"
         >
           <div className="flex flex-col justify-between gap-2 w-full h-full">
             <div className="flex flex-col gap-1">
