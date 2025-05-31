@@ -27,6 +27,14 @@ const Project = () => {
         "A web-based platform for sharing personal story and Uni-life",
       img: "/images/screenshot/hkust-pino-screenshot.png",
     },
+    {
+      pinTitle: "motion-tracking-fyp.vercel.app",
+      pinUrl: "https://motion-tracking-fyp.vercel.app",
+      title: "Healthcare Exercise System with Motion Tracking",
+      description:
+        "Award winning FYP: Web-based system for anaylzing exercise posture",
+      img: "/images/screenshot/motion-tracking-fyp.png",
+    }
   ];
 
   return (

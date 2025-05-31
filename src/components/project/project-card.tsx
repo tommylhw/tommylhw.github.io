@@ -49,6 +49,7 @@ const ProjectCard = ({ project }: { project: PROJECT }) => {
       <MobileView>
         <Link
           href={project.pinUrl}
+          target="_blank"
         >
           <div className="w-full bg-white aspect-square p-4 my-2 sm:m-2 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)]">
             <div className="flex flex-col justify-between gap-2 w-full h-full">
