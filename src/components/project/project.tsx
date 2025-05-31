@@ -83,9 +83,9 @@ const Project = () => {
         </div>
       </div>
 
-      <div className="w-full flex max-md:flex-col max-md:gap-3 justify-center max-md:items-center items-start flex-wrap border-1">
+      <div className="w-full flex max-md:flex-col max-md:gap-3 justify-center max-md:items-center items-start flex-wrap">
         {projects.map((project, index) => (
-          <div key={index} className="border-1 p-[20px] w-[350px] max-520:w-auto">
+          <div key={index} className="p-[20px] w-[350px] max-520:w-auto">
             <ProjectCard project={project} />
           </div>
         ))}
