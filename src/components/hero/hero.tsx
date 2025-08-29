@@ -118,7 +118,7 @@ const Hero = () => {
                   </p>
 
                   <div className="mt-10 max-1100:mt-6 max-875:mt-4 flex gap-6 justify-start max-md:justify-center items-center w-full">
-                    <Link href="https://drive.google.com/file/d/1qhnX2EAxENWu9Nz_L544BCOTjIAH_fLv/view" target="_blank">
+                    <Link href="https://drive.google.com/file/d/1yDXGvVSccfOGHGsetMhjfIH3TUFlI3L8/view?usp=sharing" target="_blank">
                       <Button className="rounded-[100px] cursor-pointer transition-all ease-in-out duration-300">
                         My Resume
                       </Button>
