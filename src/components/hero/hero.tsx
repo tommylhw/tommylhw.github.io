@@ -45,7 +45,7 @@ const Hero = () => {
       <div className="flex flex-col">
         <ContainerScroll
           titleComponent={
-            <div className="flex max-md:flex-col justify-center items-center max-md:items-center w-full gap-10 max-875:gap-6 mb-[20px] max-520:mb-[60px]">
+            <div className="flex max-md:flex-col justify-center items-center max-md:items-center w-full gap-10 max-875:gap-6 mb-[60px]">
               <div className="flex flex-col justify-center items-center px-[5px] py-[0] aspect-square w-[50%] max-520:w-[70%]">
                 {/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
                 <div className="aspect-square w-[80%] max-1100:w-[90%] max-875:w-[100%]">
