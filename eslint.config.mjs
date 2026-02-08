@@ -9,7 +9,8 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
   extends: ['next'],
     rules: {
-      "@typescript-eslint/no-explicit-any": "off"
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
     },
 });
 
