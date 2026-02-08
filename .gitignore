@@ -2,3 +2,4 @@ node_modules
 build
 out
 .next
+.DS_Store

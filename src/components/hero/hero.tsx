@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
+import { useActiveSection } from "@/contexts/ActiveSectionContext";
 
 // shadcn ui
 import { Button } from "@/components/ui/button";
 
 // components
-// import SplitText from "@/components/reactbit/TextAnimations/SplitText/SplitText";
 import RotatingText from "@/components/reactbit/TextAnimations/RotatingText/RotatingText";
 import TiltedCard from "../reactbit/Components/TiltedCard/TiltedCard";
-// import TrueFocus from "../reactbit/TextAnimations/TrueFocus/TrueFocus";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import Squares from "../reactbit/Backgrounds/Squares/Squares";
 import ClickSpark from "@/components/reactbit/Animations/ClickSpark/ClickSpark";
@@ -21,8 +21,24 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 const Hero = () => {
+
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: "-40% 0px -60% 0px",   // adjust: activates when section is roughly centered
+    // or amount: 0.3 for 30% visible
+  });
+
+  const { setActiveSection } = useActiveSection();
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection("about-me");
+    }
+  }, [isInView, setActiveSection]);
+
   return (
     <div
+      ref={ref}
       id="about-me"
       className="flex flex-col gap-4 justify-center max-md:items-start max-w-[1200px] md:w-full mt-[100px] border-0"
     >
@@ -34,7 +50,7 @@ const Hero = () => {
                 {/* <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} /> */}
                 <div className="aspect-square w-[80%] max-1100:w-[90%] max-875:w-[100%]">
                   <TiltedCard
-                    imageSrc="/images/avatar-3.jpg"
+                    imageSrc="/images/avatar-5.png"
                     altText="Tommy Wong"
                     captionText="Welcome to my website"
                     containerHeight="100%"
@@ -175,7 +191,7 @@ const Hero = () => {
                     <p className="w-[40%] max-520:w-[30%] text-right max-520:text-left z-50">
                       Age :
                     </p>
-                    <p className="w-[60%] text-left z-50">21</p>
+                    <p className="w-[60%] text-left z-50">{new Date().getFullYear() - 2003}</p>
                   </div>
                   <div className="flex gap-[50px] max-md:gap-[25px] w-full">
                     <p className="w-[40%] max-520:w-[30%] text-right max-520:text-left z-50">
@@ -188,7 +204,7 @@ const Hero = () => {
                       Education :
                     </p>
                     <p className="w-[60%] max-520:w-[100%] text-left z-50 ">
-                      The Hong Kong University of Science and Technology (HKUST)
+                      The Hong Kong University of Science and Technology (HKUST) - UG Class of 2025
                     </p>
                   </div>
                 </div>

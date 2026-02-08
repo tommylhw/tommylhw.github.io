@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
+import { useActiveSection } from "@/contexts/ActiveSectionContext";
+import { useInView } from "framer-motion";
 
 // components
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
@@ -37,8 +39,23 @@ const Project = () => {
     }
   ];
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: "-40% 0px -60% 0px",   // adjust: activates when section is roughly centered
+    // or amount: 0.3 for 30% visible
+  });
+
+  const { setActiveSection } = useActiveSection();
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection("projects");
+    }
+  }, [isInView, setActiveSection]);
+
   return (
     <div
+      ref={ref}
       id="projects"
       className="w-full max-w-[1200px] flex flex-col justify-center items-center gap-4 max-520:gap-0 my-10 px-0 520:px-10"
     >

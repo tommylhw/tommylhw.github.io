@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { isMobile } from "react-device-detect";
+import { useActiveSection } from "@/contexts/ActiveSectionContext";
 
 // components
 import MarkHighlight from "../mark-highlight";
@@ -15,6 +16,8 @@ import MarkHighlight from "../mark-highlight";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
 
 const Navbar = () => {
+  const { activeSection } = useActiveSection();
+
   useGSAP(() => {
     // First animation: Background color, blur, and border on scroll
     gsap.to(".navbar", {
@@ -99,17 +102,17 @@ const Navbar = () => {
         >
           <li onClick={() => ScrollToSection("about-me")}>
             <p>
-              <MarkHighlight>About Me</MarkHighlight>
+              <MarkHighlight active={activeSection === "about-me"}>About Me</MarkHighlight>
             </p>
           </li>
           <li onClick={() => ScrollToSection("projects")}>
             <p>
-              <MarkHighlight>Projects</MarkHighlight>
+              <MarkHighlight active={activeSection === "projects"}>Projects</MarkHighlight>
             </p>
           </li>
           <li onClick={() => ScrollToSection("recognition")}>
             <p>
-              <MarkHighlight>Reconition</MarkHighlight>
+              <MarkHighlight active={activeSection === "recognition"}>Recognition</MarkHighlight>
             </p>
           </li>
         </ul>

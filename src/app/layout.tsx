@@ -12,6 +12,7 @@ import "lenis/dist/lenis.css";
 import "aos/dist/aos.css";
 import ScrollProvider from "@/providers/ScrollProvider";
 import * as amplitude from "@amplitude/analytics-browser";
+import { ActiveSectionProvider } from "@/contexts/ActiveSectionContext";
 
 amplitude.init("5c87539850106bef11f0c600774d75df", { autocapture: true });
 
@@ -67,25 +68,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${pacifico.variable} ${montserrat.variable} ${kalam.variable} antialiased`}
       >
-        <ScrollProvider>
-          {/* Top shadow */}
-          <div
-            className="fixed top-0 left-0 w-full h-16 bg-gradient-to-b from-gray-100 to-transparent z-100"
-            style={{ pointerEvents: "none" }} // Prevent interaction
-          ></div>
+        <ActiveSectionProvider>
+          <ScrollProvider>
+            {/* Top shadow */}
+            <div
+              className="fixed top-0 left-0 w-full h-16 bg-gradient-to-b from-gray-100 to-transparent z-100"
+              style={{ pointerEvents: "none" }} // Prevent interaction
+            ></div>
 
-          {/* Bottom shadow */}
-          <div
-            className="fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-100 to-transparent z-100"
-            style={{ pointerEvents: "none" }} // Prevent interaction
-          ></div>
+            {/* Bottom shadow */}
+            <div
+              className="fixed bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-100 to-transparent z-100"
+              style={{ pointerEvents: "none" }} // Prevent interaction
+            ></div>
 
-          <div className="fixed w-full z-1000">
-            <Navbar />
-          </div>
+            <div className="fixed w-full z-1000">
+              <Navbar />
+            </div>
 
-          {children}
-        </ScrollProvider>
+            {children}
+          </ScrollProvider>
+        </ActiveSectionProvider>
       </body>
     </html>
   );

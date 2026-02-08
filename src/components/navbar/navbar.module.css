@@ -8,3 +8,7 @@
 .navbar_ul li p {
   font-size: 12px;
 }
+
+li.active mark {
+  background-size: 100% 38% !important;
+}

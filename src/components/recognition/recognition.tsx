@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useActiveSection } from "@/contexts/ActiveSectionContext";
+import { useInView } from "framer-motion";
 
 // components
 import Awards from "./awards";
@@ -36,8 +38,23 @@ const Recognition = () => {
 //     },
 //   ];
 
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: "-40% 0px -60% 0px",   // adjust: activates when section is roughly centered
+    // or amount: 0.3 for 30% visible
+  });
+
+  const { setActiveSection } = useActiveSection();
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection("recognition");
+    }
+  }, [isInView, setActiveSection]);
+
   return (
     <div
+      ref={ref}
       id="recognition"
       className="max-w-[1200px] w-full flex flex-col justify-center item-center" /* className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full items-start justify-start my-40" */
     >
