@@ -43,7 +43,7 @@ export const ContainerScroll = ({
       <div
         className="w-full relative"
         style={{
-          perspective: "1000px",
+          perspective: isMobile ? "600px" : "1000px",
         }}
       >
         <Header translate={translate.get()} titleComponent={titleComponent} />
@@ -83,6 +83,7 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
+        willChange: "transform",
         boxShadow:
           isMobile
             ? "0 10px 30px -10px rgb(0 0 0 / 0.3)"   // light, cheap shadow
