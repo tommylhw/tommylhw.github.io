@@ -4,7 +4,7 @@ import { useActiveSection } from "@/contexts/ActiveSectionContext";
 import { useInView } from "framer-motion";
 
 // components
-import Awards from "./awards";
+// import Awards from "./awards";
 import Media from "./media";
 
 const Recognition = () => {
