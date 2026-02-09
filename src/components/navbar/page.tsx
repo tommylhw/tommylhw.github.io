@@ -19,6 +19,9 @@ const Navbar = () => {
   const { activeSection } = useActiveSection();
 
   useGSAP(() => {
+    gsap.set(".navbar", {
+      willChange: "max-width, border, transform",
+    });
     // First animation: Background color, blur, and border on scroll
     gsap.to(".navbar", {
       scrollTrigger: {
@@ -58,8 +61,8 @@ const Navbar = () => {
       scrollTrigger: {
         trigger: ".navbar",
         start: "top top",
-        end: isMobile ? "50 top" : "180 top",
-        scrub: true,
+        end: isMobile ? "100 top" : "180 top",
+        scrub: isMobile ? 0.8 : 1,
       },
     });
 
@@ -69,6 +72,7 @@ const Navbar = () => {
       gsap.set(".navbar", {
         maxWidth: 600,
         border: "1px solid rgba(226, 232, 240, 1)",
+        willChange: "max-width, border, transform",
       });
     }
 
