@@ -54,14 +54,14 @@ const Navbar = () => {
     // Second animation: Max-width and border on scroll
     gsap.to(".navbar", {
       maxWidth: isMobile ? 300 : 600,
-      backgroundColor: "rgba(255, 255, 255, 0.5)",
-      backdropFilter: "blur(10px)",
-      border: "1px solid rgba(226, 232, 240, 1)",
+      // backgroundColor: "rgba(255, 255, 255, 0.5)",
+      // backdropFilter: "blur(10px)",
+      // border: "1px solid rgba(226, 232, 240, 1)",
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: ".navbar",
         start: "top top",
-        end: isMobile ? "100 top" : "180 top",
+        end: isMobile ? "top top" : "180 top",
         scrub: isMobile ? 0.8 : 1,
       },
     });

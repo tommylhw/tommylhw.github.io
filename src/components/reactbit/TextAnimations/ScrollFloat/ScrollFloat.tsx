@@ -37,7 +37,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   const splitText = useMemo(() => {
     const text = typeof children === "string" ? children : "";
     return text.split("").map((char, index) => (
-      <span className="inline-block" key={index}>
+      <span className="inline-block" style={{ willChange: "transform, opacity" }} key={index}>
         {char === " " ? "\u00A0" : char}
       </span>
     ));
