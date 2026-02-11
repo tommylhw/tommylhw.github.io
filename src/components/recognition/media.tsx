@@ -1,6 +1,7 @@
-// "use client";
-import React from "react";
+"use client";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
+import { useInView } from "framer-motion";
 
 // components
 import ScrollFloat from "../reactbit/TextAnimations/ScrollFloat/ScrollFloat";
@@ -17,8 +18,7 @@ interface MediaProps {
   img: string;
 }
 
-const Media = () => {
-  const media: MediaProps[] = [
+const media: MediaProps[] = [
     {
       title:
         "LooopHK: 【圈短片】【玩遊戲識別SEN】同學患讀寫障礙、啟發中學生發明家 黃諾謙：AR愛心玩具助評估患病風險、小一始輔導成功率達逾八成",
@@ -134,8 +134,87 @@ const Media = () => {
     },
   ];
 
+const Media = () => {
+  const [visibleCount, setVisibleCount] = useState(isMobile ? 3 : 9);
+  const [columnCount, setColumnCount] = useState(1);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  // const sentinelRef = useRef<HTMLDivElement>(null);
+
+  // Update column count on mount and resize
+  useEffect(() => {
+    const updateColumns = () => {
+      const w = window.innerWidth;
+      if (w >= 875)      setColumnCount(3);
+      else if (w >= 520) setColumnCount(2);
+      else               setColumnCount(1);
+    };
+
+    updateColumns();
+    window.addEventListener("resize", updateColumns);
+    return () => window.removeEventListener("resize", updateColumns);
+  }, []);
+
+  const loadMore = useCallback(() => {
+    setVisibleCount(prev => Math.min(prev + 6, media.length));
+  }, []);
+
+  const collapseMedia = useCallback(() => {
+    setVisibleCount(isMobile ? 3 : 9);
+    // if (sentinelRef.current) {
+    //   sentinelRef.current.scrollIntoView({ behavior: "smooth" });
+    // }
+  }, []);
+
+  // useInView – returns true when the section is in viewport
+  const isInView = useInView(sectionRef, {
+    margin: "0px 0px -100px 0px",      // trigger a bit before fully out of view
+  });
+
+  // Reset to minimum when the section leaves the viewport
+  useEffect(() => {
+    // Only collapse if currently expanded AND now out of view
+    if (!isInView && visibleCount > (isMobile ? 3 : 9)) {
+      collapseMedia();
+      console.log("Section left viewport, collapsing media");
+    }
+  }, [isInView, visibleCount, collapseMedia, isMobile]);
+
+  // Reorder items only when visibleCount or columnCount changes
+  const reorderedItems = useMemo(() => {
+    const items = media.slice(0, visibleCount);
+    const result = [];
+    for (let col = 0; col < columnCount; col++) {
+      for (let i = col; i < items.length; i += columnCount) {
+        if (items[i]) result.push(items[i]);
+      }
+    }
+    return result;
+  }, [visibleCount, columnCount]);
+
+  useEffect(() => {
+    console.log("visibleCount:", visibleCount);
+  }, [visibleCount]);
+
+  // Auto-load more when user scrolls near the bottom
+  // useEffect(() => {
+  //   const sentinel = sentinelRef.current;
+  //   if (!sentinel) return;
+
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       if (entries[0].isIntersecting && visibleCount < media.length) {
+  //         loadMore();
+  //       }
+  //     },
+  //     { threshold: 0.1, rootMargin: "400px" } // load a bit early
+  //   );
+
+  //   observer.observe(sentinel);
+  //   return () => observer.disconnect();
+  // }, [visibleCount, loadMore, media.length]);
+
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-4 max-520:gap-0 my-10 ">
+    <div className="w-full flex flex-col justify-center items-center gap-4 max-520:gap-0 my-10 " ref={sectionRef}>
       {/* <div className="w-full flex flex-row justify-center items-center gap-4">
         <FaAward className="text-[42px] text-[#68EAFD]" />
         <ScrollFloat
@@ -223,8 +302,8 @@ const Media = () => {
         </div>
       </div>
 
-      <div className="w-fit p-2  520:[column-count:2] 875:[column-count:3]">
-        {media.map((item, index) => (
+      <div className="w-fit p-2 520:[column-count:2] 875:[column-count:3]">
+        {reorderedItems.map((item, index) => (
           <MediaCard
             key={index}
             title={item.title}
@@ -234,6 +313,16 @@ const Media = () => {
           />
         ))}
       </div>
+      <button
+        onClick={visibleCount >= media.length ? collapseMedia : loadMore}
+        className="mt-2 px-[28px] py-[10px] cursor-pointer bg-neutral-900 hover:bg-black text-white text-sm font-medium rounded-full transition-all"
+      >
+        {visibleCount >= media.length ? "Collapse" : "Load More"}
+      </button>
+      {/* Invisible sentinel that triggers loadMore */}
+      {/* {visibleCount < media.length && (
+        <div ref={sentinelRef} className="h-20 w-full border-2" />
+      )} */}
     </div>
   );
 };

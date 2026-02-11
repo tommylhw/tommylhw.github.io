@@ -87,6 +87,22 @@ export default function RootLayout({
             </div>
 
             {children}
+            {process.env.NODE_ENV === "development" && (
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    console.log(
+                      "Total <div> elements on page:", 
+                      document.getElementsByTagName("div").length
+                    );
+                    console.log(
+                      "Total DOM nodes:", 
+                      document.getElementsByTagName("*").length
+                    );
+                  `,
+                }}
+              />
+            )}
           </ScrollProvider>
         </ActiveSectionProvider>
       </body>
